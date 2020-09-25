@@ -529,9 +529,7 @@
         <script src="https://saraya.sakorncable.com/assets/pages/mobile/js/mobile_home.js"></script>
         <script src="https://saraya.sakorncable.com/assets/pages/mobile/js/Mobile_CustomerCheckblanace.js"></script>
         <script src="https://saraya.sakorncable.com/assets/pages/mobile/js/Mobile_CustomerSendSlip.js"></script>
-        <script src="https://saraya.sakorncable.com/assets/pages/mobile/js/Mobile_CustomerGetDataCarModal.js"></script>
-      
-
+ 
 
 <script>
 
