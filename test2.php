@@ -9,7 +9,7 @@
 
     while ($result = odbc_fetch_array($query)) {
 
-          print_r(odbc_fetch_array($q));
+          print_r(odbc_fetch_array($query))."<br>";
 
     }
  
