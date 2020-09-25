@@ -17,8 +17,7 @@
       Invoice_pre_amount ,
       Total_invoice ,
       Old_blanace '
-      FROM invoice
-      WHERE room_no = '111\/6'
+      FROM invoice 
       ORDER BY invoice_date DESC;
        ");
 
