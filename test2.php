@@ -1,4 +1,4 @@
-<meta charset="utf-8">
+ 
 <?php 
 ini_set('display_errors',1);
 
