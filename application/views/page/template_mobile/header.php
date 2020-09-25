@@ -345,8 +345,8 @@
                 <div class="info-container">
                      
 
-                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="NameAuthen">Guest</div>
-                        <div class="email" id="StatusAuthen">Waiting Authentication</div><div class="email" >หมดเวลาการเชื่อมต่อใน(<label id="IdleTimeID"></label>)</div>
+                        <div hidden class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="NameAuthen">Guest</div>
+                        <div hidden class="email" id="StatusAuthen">Waiting Authentication</div><div class="email" >หมดเวลาการเชื่อมต่อใน(<label id="IdleTimeID"></label>)</div>
                         <input type="text" readonly hidden id="CustomerIDAuthen" name="CustomerIDAuthen">
                         <input type="text" readonly hidden id="NameAuthen" name="NameAuthen">
                         <input type="text" readonly hidden id="StatusAuthen" name="StatusAuthen">
