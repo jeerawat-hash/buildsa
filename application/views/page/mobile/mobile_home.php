@@ -121,18 +121,7 @@
                     </div>
 
                 </div> 
-
-                <div id="CustomerGetDataCar" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box hover-zoom-effect">
-                        <div class="icon bg-orange">
-                            <i class="material-icons">email</i>
-                        </div>
-                        <div class="content">
-                            <div class="text">ตรวจสอบเลขทะเบียนรถ</div>
-                        </div>
-                    </div>
-
-                </div> 
+ 
 
                 <div id="CustomerGetPolicyA" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box hover-zoom-effect">
@@ -340,67 +329,7 @@
 
 
 
-
-        <!-- CustomerGetDataCarModal -->
-            <div class="modal fade" data-backdrop="static" data-keyboard="false" id="CustomerGetDataCarModal" tabindex="-1" role="dialog">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="largeModalLabel">ตรวจสอบข้อมูลทะเบียนรถ</h4>
-                        </div>
-                        <div class="modal-body">
-
-
-                        <div class="row clearfix">
-                                
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                          
-                                        <label>กรุณาระบุหมายเลขทะเบียนรถที่ต้องการทราบข้อมูล</label>
-                                        
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    
-                                    <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <input type="text" value="" class="form-control" id="CarCode" name="CarCode" required>
-                                        <label class="form-label">หมายเลขทะเบียนรถ</label>
-                                    </div>
-                                    </div>
-
-
-                                </div>
-                        </div> 
-
-
-
-
-
-
-                        </div>
-                        <div class="modal-footer">
-                            
-                            <button type="button" id="SendData" class="btn btn-lg btn-success waves-effect">ส่งข้อมูล</button>
-                            <div class="preloader" id="PreloadSendData">
-                                    <div class="spinner-layer pl-red">
-                                        <div class="circle-clipper left">
-                                            <div class="circle"></div>
-                                        </div>
-                                        <div class="circle-clipper right">
-                                            <div class="circle"></div>
-                                        </div>
-                                    </div>
-                            </div> 
-                            <button type="button" data-dismiss="modal" class="btn btn-lg btn-danger waves-effect">ปิด</button>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
+ 
 
             <!-- CustomerGetPolicyAModal -->
             <div class="modal fade" id="CustomerGetPolicyAModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -510,77 +439,7 @@
           </div>
           <!-- CustomerGetPolicyAModal -->
 
-
-          <!-- GetDataCarDetailModal -->
-            <div class="modal fade" id="GetDataCarDetailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">              
-                <div class="modal-body">
-  
-                    <div class="row clearfix">
-
-
-
-                        <table  class="table table-striped table-bordered table-hover">
-                                              <thead>
-                                                <tr>
-                                                   
-                                                    <th></th>
-                                                    <th></th> 
-                                                
-                                                </tr>
-
-                                              </thead>
-
-                                              <tbody  class="scrollit">   
-                                                    
-                                                    <tr>
-                                                        <td>ชื่อ</td>
-                                                        <td><font color="red"><label id="CustomerName"></label></font></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ติดต่อ</td>
-                                                        <td><font color="red"><label id="ContactInfo"></label></font></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ข้อมูลรถ</td>
-                                                        <td><font color="red"><label id="CarInfo"></label></font></td>
-                                                    </tr>
-                                                  
-                                              </tbody>
-                        </table> 
-
-
-
-
-
-
-
-
-
-
-
-
-
  
-                    </div>
-                     
-                  
-                   
-                </div>
-
-                <div class="modal-footer">
-                             
-                            <button type="button"  data-dismiss="modal" class="btn btn-lg btn-danger waves-effect cctv-close">ปิด</button>
-
-                        </div>
-              </div>
-
-
-              </div>
-            </div>
-          </div>
-          <!-- InfoBalanceModal -->
 
 
 
