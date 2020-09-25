@@ -1,6 +1,10 @@
 <?php 
 	
-		mssql_connect("mssqlcon","sa","Sakorn123");
+	
+	   ini_set('mssql.charset', 'UTF-8'); 
+ 
+      $a = mssql_connect('mssqlcon', 'sa', 'Sakorn123');
+
  	
 
  	$query = 	mssql_query("SELECT [ID]
