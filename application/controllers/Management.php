@@ -72,11 +72,11 @@ class Management extends CI_Controller
  */
 	//		echo "1";
 			print_r($_FILES);
-		}else{
+		/*}else{
 
 			echo "2";
 
-		}
+		}*/
  
 
 	}
