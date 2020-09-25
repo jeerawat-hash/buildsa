@@ -60,7 +60,7 @@ class Mobile_model extends CI_Model
   {
      $this->mssql = $this->load->database("mssql",true);
       
-      
+
       return 1;
 
 
@@ -149,6 +149,29 @@ class Mobile_model extends CI_Model
            ,'".$Receipt_Amount."'
            ,'".$Doc_Status."') ");
 
+
+  }
+
+
+  public function insertDataServicesCostDetail($Invoice_Id,$Ac_Code,$Ac_Name,$Description,$Order_No,$Invoice_Item_Amount)
+  {
+
+     $this->mssql = $this->load->database("mssql",true);
+
+     $this->mssql->query(" INSERT INTO [SarayaProject].[dbo].[CustomerInvoiceDetail]
+           ([Invoice_Id]
+           ,[Ac_Code]
+           ,[Ac_Name]
+           ,[Description]
+           ,[Order_No]
+           ,[Invoice_Item_Amount])
+     VALUES
+           ('".$Invoice_Id."'
+           ,'".$Ac_Code."'
+           ,'".$Ac_Name."'
+           ,'".$Description."'
+           ,'".$Order_No."'
+           ,'".$Invoice_Item_Amount."') ");
 
   }
 

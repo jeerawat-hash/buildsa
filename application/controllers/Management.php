@@ -57,10 +57,14 @@ class Management extends CI_Controller
  
 				foreach ($resultDetail as $ValueDetail) {
 
- 				/////
-				 
-	 			
-				//////
+  
+					if ($Value["Invoice_id"] == $ValueDetail["invoice_id"]) {
+						
+						$this->Mobile_model->insertDataServicesCostDetail($ValueDetail["invoice_id"],$ValueDetail["Ac_code"],$ValueDetail["Ac_name"],$ValueDetail["Description"],$ValueDetail["Order_no"],$ValueDetail["Invoice_item_amount"]);
+					
+					}
+ 
+
 				}
  
 			}
@@ -76,7 +80,7 @@ class Management extends CI_Controller
  
 
 	}
-
+/*
 	public function createDataServicesCostDetailFromXlsx()
 	{
 
@@ -110,6 +114,7 @@ class Management extends CI_Controller
  
 
 	}
+	*/
 	public function createDataReceiveFromXlsx()
 	{
 
