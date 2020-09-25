@@ -2,8 +2,8 @@ $(function(){
  	
     
 
-		$("#DataSecrectkeyModal").modal("show");
-		$("#DataSecrectkeyModal").find("#PreloadGetData").hide();
+		//$("#DataSecrectkeyModal").modal("show");
+		//$("#DataSecrectkeyModal").find("#PreloadGetData").hide();
 	  
 
 
