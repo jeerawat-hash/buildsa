@@ -4,9 +4,14 @@
  $conn = odbc_connect("TestDatabase", "", "");
 
 
-    $q =    odbc_exec($conn, "select Person_name from invoice ");
+    $query =    odbc_exec($conn, "select Person_name from invoice ");
 
-    print_r(odbc_fetch_array($q));
+
+    while ($result = odbc_fetch_array($query)) {
+
+          print_r(odbc_fetch_array($q));
+
+    }
  
 
     
