@@ -5,7 +5,7 @@
  $conn = odbc_connect("TestDatabase", "", "");
 
 
-    $query =    odbc_exec($conn, "SELECT Invoice_id,Invoice_no,Invoice_date,Due_date,Room_no FROM invoice");
+    $query =    odbc_exec($conn, "SELECT Invoice_id,Invoice_no,Invoice_date,Due_date,Room_no FROM invoice where Room_no = '111/6' ");
 
 
     while ($result = odbc_fetch_array($query)) {
