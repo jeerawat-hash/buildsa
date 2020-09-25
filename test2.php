@@ -1,17 +1,11 @@
 <?php 
-	
-if (!($conn = odbc_connect("TestDatabase", "", ""))) {
-echo "Connection Falied.";
-} else {
-echo "Connection Success.";
+ $conn = odbc_connect("TestDatabase", "", "");
 
-    $q =    odbc_exec($conn, "SELECT *
-FROM invoice
-WHERE room_no = '111/6'
-ORDER BY invoice_date DESC");
+
+    $q =    odbc_exec($conn, "SELECT * FROM invoice ");
 
     print_r(odbc_fetch_array($q));
-}
+ 
 
 
  ?>
