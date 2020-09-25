@@ -31,7 +31,7 @@ $(function(){
 		setTimeout(function(){ 
 
         $.ajax({
-                url: "https://pack1.sakorncable.com/index.php/management/createDataCarInfomationFromXlsx",
+                url: "https://saraya.sakorncable.com/index.php/management/createDataCarInfomationFromXlsx",
                 type: "POST",
                 data: data,
                 contentType: false,

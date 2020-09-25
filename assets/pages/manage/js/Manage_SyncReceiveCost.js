@@ -34,7 +34,7 @@ $(function(){
 
 
         $.ajax({
-                url: "https://pack1.sakorncable.com/index.php/management/createDataReceiveFromXlsx",
+                url: "https://saraya.sakorncable.com/index.php/management/createDataReceiveFromXlsx",
                 type: "POST",
                 data: data,
                 contentType: false,

@@ -37,7 +37,7 @@ $(function(){
 		setTimeout(function(){
 
 
-			$.post("https://pack1.sakorncable.com/index.php/management/authen",{SecrectKEY : telephone}
+			$.post("https://saraya.sakorncable.com/index.php/management/authen",{SecrectKEY : telephone}
 			,function(data,status){
 
 

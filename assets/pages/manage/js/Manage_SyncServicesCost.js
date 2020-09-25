@@ -32,7 +32,7 @@ $(function(){
 
 
             $.ajax({
-                url: "https://pack1.sakorncable.com/index.php/management/createDataServicesCostFromXlsx",
+                url: "https://saraya.sakorncable.com/index.php/management/createDataServicesCostFromXlsx",
                 type: "POST",
                 data: data,
                 contentType: false,
