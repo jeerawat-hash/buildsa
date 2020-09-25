@@ -35,7 +35,7 @@ class Management extends CI_Controller
 	public function createDataServicesCostFromXlsx()
 	{
 
-
+/*
 		if ($_FILES["ServicesCost"]["type"] == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
 
 			shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoice.xlsx");
@@ -69,9 +69,9 @@ class Management extends CI_Controller
  
 			}
 
- 
-			echo "1";
-
+ */
+	//		echo "1";
+			print_r($_FILES);
 		}else{
 
 			echo "2";
