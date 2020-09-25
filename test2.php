@@ -12,14 +12,13 @@
       Room_no,
       Person_id,
       Person_name,
-      Invoice_amount as 'เดือนนี้',
-      Receipt_amount as 'รับเข้า',
+      Invoice_amount ,
+      Receipt_amount ,
       Invoice_pre_amount ,
-      Total_invoice as 'ยอดรวมต้องจ่าย',
-      Old_blanace as 'ยอดค้างเดิมรวม'
-       
+      Total_invoice ,
+      Old_blanace '
       FROM invoice
-      WHERE room_no = '111/6'
+      WHERE room_no = '111\/6'
       ORDER BY invoice_date DESC;
        ");
 
