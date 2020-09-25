@@ -1,3 +1,0 @@
-# buildsa
-sala
-test
