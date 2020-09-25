@@ -87,7 +87,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                           
-                                        <label>เลือกไฟล์ ยอดค้างของลูกบ้านเท่านั้น  </label>
+                                        <label>เลือกไฟล์ รายการยอดค้างชำระSakornPRO เท่านั่น  </label>
                                         
                                     </div>
                                 </div>
@@ -100,6 +100,30 @@
                                         <a class='btn btn-primary' href='javascript:;'>
                                         เลือกไฟล์..
                                         <input type="file" id="ServicesCostfile" name="ServicesCostfile" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
+                                        </a><span class='label label-info' id="upload-file-info"></span>
+                                    </div>
+
+
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                          
+                                        <label>เลือกไฟล์ รายละเอียดยอดค้างชำระSakornPro.xlsx เท่านั่น  </label>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                          
+
+                                      <div id="fileupload" style="position:relative;">
+                                        <a class='btn btn-primary' href='javascript:;'>
+                                        เลือกไฟล์..
+                                        <input type="file" id="ServicesCostfile2" name="ServicesCostfile2" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
                                         </a><span class='label label-info' id="upload-file-info"></span>
                                     </div>
 

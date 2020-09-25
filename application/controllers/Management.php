@@ -39,10 +39,13 @@ class Management extends CI_Controller
 		if ($_FILES["ServicesCost"]["type"] == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
 
 			shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoice.xlsx");
-			
+			shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoiceDetail.xlsx");
+
+			move_uploaded_file($_FILES["ServicesCostDetail"]["tmp_name"], "/home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoiceDetail.xlsx");
 			move_uploaded_file($_FILES["ServicesCost"]["tmp_name"], "/home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoice.xlsx");
   
 			$result = $this->Mobile_model->createDataFromXlsx("CustomerInvoice.xlsx");
+			$resultDetail = $this->Mobile_model->createDataFromXlsx("CustomerInvoiceDetail.xlsx");
 
 			//print_r($result);
  
@@ -51,7 +54,15 @@ class Management extends CI_Controller
  
 				$this->Mobile_model->insertDataServicesCost($Value["Invoice_id"],$Value["Invoice_no"],$Value["Invoice_date"],$Value["Room_no"],$Value["Person_id"],$Value["Invoice_amount"],$Value["Old_balance"],$Value["Total_invoice"],$Value["Receipt_amount"],$Value["Doc_status"]);
 	 			
+ 
+				foreach ($resultDetail as $ValueDetail) {
 
+ 				/////
+				 
+	 			
+				//////
+				}
+ 
 			}
 
  
