@@ -49,8 +49,8 @@ class Management extends CI_Controller
 			foreach ($result as $Value) {
 
  
-				//$this->Mobile_model->insertDataServicesCost($CUST,$Value["DATE"],$Value["CODE"],$Value["AMOUNT"]);
-	 
+				$this->Mobile_model->insertDataServicesCost($_POST["Invoice_id"],$_POST["Invoice_no"],$_POST["Invoice_date"],$_POST["Room_no"],$_POST["Person_id"],$_POST["Invoice_amount"],$_POST["Old_balance"],$_POST["Total_invoice"],$_POST["Receipt_amount"],$_POST["Doc_status"]);
+	 			
 
 			}
 
@@ -108,9 +108,9 @@ class Management extends CI_Controller
 
 		if ($_FILES["ReceiveCost"]["type"] == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
 
-			shell_exec("rm /home/admin/web/pack1.sakorncable.com/public_html/upload/temp/CustomerReceipt.xlsx");
+			shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerReceipt.xlsx");
 			
-			move_uploaded_file($_FILES["ReceiveCost"]["tmp_name"], "/home/admin/web/pack1.sakorncable.com/public_html/upload/temp/CustomerReceipt.xlsx");
+			move_uploaded_file($_FILES["ReceiveCost"]["tmp_name"], "/home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerReceipt.xlsx");
 
  			$result = $this->Mobile_model->createDataFromXlsx("CustomerReceipt.xlsx");
 
@@ -146,9 +146,9 @@ class Management extends CI_Controller
 
 		if ($_FILES["ReceiveCostDetail"]["type"] == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
 
-			shell_exec("rm /home/admin/web/pack1.sakorncable.com/public_html/upload/temp/CustomerReceiptDetail.xlsx");
+			shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerReceiptDetail.xlsx");
 			
-			move_uploaded_file($_FILES["ReceiveCostDetail"]["tmp_name"], "/home/admin/web/pack1.sakorncable.com/public_html/upload/temp/CustomerReceiptDetail.xlsx");
+			move_uploaded_file($_FILES["ReceiveCostDetail"]["tmp_name"], "/home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerReceiptDetail.xlsx");
 
  			$result = $this->Mobile_model->createDataFromXlsx("CustomerReceiptDetail.xlsx");
 
@@ -173,14 +173,7 @@ class Management extends CI_Controller
   
 	} 
 
-	public function testexcel()
-	{ 
-
-			$result = $this->Mobile_model->createDataFromXlsx("test.xlsx");
-			print_r($result);
-
  
-	}
 
 
 

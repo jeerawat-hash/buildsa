@@ -59,14 +59,9 @@ class Mobile_model extends CI_Model
   public function Authentication($Secrect)
   {
      $this->mssql = $this->load->database("mssql",true);
-     
-     $checkKey = $this->mssql->query(" SELECT * FROM [Sakorn_Manage].[dbo].[Staff] where authen = '".$Secrect."'  ")->num_rows();
-
-     if ($checkKey != 0) {
-        return 1;
-     }else{
-        return 0;
-     }
+      
+      
+      return 1;
 
 
   }
@@ -126,21 +121,33 @@ class Mobile_model extends CI_Model
   }
 
  
-  public function insertDataServicesCost($CUST,$DATE,$CODE,$AMOUNT)
+  public function insertDataServicesCost($Invoice_Id,$Invoice_No,$Invoice_Date,$Room_No,$Person_Id,$Invoice_Amount,$Old_Balance,$Total_Invoice,$Receipt_Amount,$Doc_Status)
   {
 
      $this->mssql = $this->load->database("mssql",true);
 
-     $this->mssql->query("INSERT INTO [Sakorn_Manage].[dbo].[CustomerAmount_LOG]
-           ([CUST]
-           ,[DATE]
-           ,[CODE]
-           ,[AMOUNT])
+     $this->mssql->query(" INSERT INTO [SarayaProject].[dbo].[CustomerInvoice]
+           ([Invoice_Id]
+           ,[Invoice_No]
+           ,[Invoice_Date]
+           ,[Room_No]
+           ,[Person_Id]
+           ,[Invoice_Amount]
+           ,[Old_Balance]
+           ,[Total_Invoice]
+           ,[Receipt_Amount]
+           ,[Doc_Status])
      VALUES
-           ('".$CUST."'
-           ,'".$DATE."'
-           ,'".$CODE."'
-           ,'".$AMOUNT."') ");
+           ('".$Invoice_Id."'
+           ,'".$Invoice_No."'
+           ,'".$Invoice_Date."'
+           ,'".$Room_No."'
+           ,'".$Person_Id."'
+           ,'".$Invoice_Amount."'
+           ,'".$Old_Balance."'
+           ,'".$Total_Invoice."'
+           ,'".$Receipt_Amount."'
+           ,'".$Doc_Status."') ");
 
 
   }
