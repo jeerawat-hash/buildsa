@@ -7,7 +7,7 @@ $driver = "MDBTools";
 $dbName = "/home/admin/web/saraya.sakorncable.com/public_html/DB/saraya.mdb";
 $db = new PDO("odbc:Driver=$driver;DBQ=$dbName", "", "");
 
-  foreach ($db->query("SELECT  invoice_id  FROM invoice") as $row) {
+  foreach ($db->query("SELECT  invoice_id,Total_invoice  FROM invoice") as $row) {
       
       print_r($row)."<br>";
 
