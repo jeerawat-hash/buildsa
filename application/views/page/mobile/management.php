@@ -123,8 +123,8 @@
                                       <div id="fileupload" style="position:relative;">
                                         <a class='btn btn-primary' href='javascript:;'>
                                         เลือกไฟล์..
-                                        <input type="file" id="ServicesCostfile2" name="ServicesCostfile2" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
-                                        </a><span class='label label-info' id="upload-file-info"></span>
+                                        <input type="file" id="ServicesCostfile2" name="ServicesCostfile2" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40"  onchange='$("#upload-file-info2").html($(this).val());'>
+                                        </a><span class='label label-info' id="upload-file-info2"></span>
                                     </div>
 
 
