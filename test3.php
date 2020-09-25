@@ -11,7 +11,7 @@ ini_set('display_errors',1);
 
     while ($result = odbc_fetch_array($query)) {
 
-            echo $result["invoice_id"]."<br>";
+            echo $result["Person_name"]."<br>";
 
     }
  
