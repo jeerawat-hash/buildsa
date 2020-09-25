@@ -49,7 +49,7 @@ class Management extends CI_Controller
 			foreach ($result as $Value) {
 
  
-				$this->Mobile_model->insertDataServicesCost($_POST["Invoice_id"],$_POST["Invoice_no"],$_POST["Invoice_date"],$_POST["Room_no"],$_POST["Person_id"],$_POST["Invoice_amount"],$_POST["Old_balance"],$_POST["Total_invoice"],$_POST["Receipt_amount"],$_POST["Doc_status"]);
+				$this->Mobile_model->insertDataServicesCost($Value["Invoice_id"],$Value["Invoice_no"],$Value["Invoice_date"],$Value["Room_no"],$Value["Person_id"],$Value["Invoice_amount"],$Value["Old_balance"],$Value["Total_invoice"],$Value["Receipt_amount"],$Value["Doc_status"]);
 	 			
 
 			}
