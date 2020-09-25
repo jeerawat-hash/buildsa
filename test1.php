@@ -14,7 +14,7 @@ $sth -> execute();
 
 foreach($sth as $row) {
 
-    print_r(array_value($row));
+    print_r($row);
 
 }
 
