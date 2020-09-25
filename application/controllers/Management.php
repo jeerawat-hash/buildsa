@@ -41,9 +41,9 @@ class Management extends CI_Controller
 
 		if ($_FILES["ServicesCost"]["type"] == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
 
-			shell_exec("rm /home/admin/web/pack1.sakorncable.com/public_html/upload/temp/".$_FILES["ServicesCost"]["name"]);
+			shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/".$_FILES["ServicesCost"]["name"]);
 			
-			move_uploaded_file($_FILES["ServicesCost"]["tmp_name"], "/home/admin/web/pack1.sakorncable.com/public_html/upload/temp/".$_FILES["ServicesCost"]["name"]);
+			move_uploaded_file($_FILES["ServicesCost"]["tmp_name"], "/home/admin/web/saraya.sakorncable.com/public_html/upload/temp/".$_FILES["ServicesCost"]["name"]);
 
 
 
@@ -257,6 +257,21 @@ class Management extends CI_Controller
 
  
  
+
+	}
+
+
+	public function testexcel()
+	{
+
+
+
+			$result = $this->Mobile_model->createDataFromXlsx("test.xlsx");
+
+
+			print_r($result);
+
+
 
 	}
 
