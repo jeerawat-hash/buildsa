@@ -86,7 +86,7 @@ class Management extends CI_Controller
 			shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoiceDetail.xlsx");
 			
 			move_uploaded_file($_FILES["ServicesCostDetail"]["tmp_name"], "/home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoiceDetail.xlsx");
-  			 
+  			 /*
 			$resultB = $this->Mobile_model->createDataFromXlsx("CustomerInvoiceDetail.xlsx");
 
 			//print_r($result);
@@ -105,7 +105,7 @@ class Management extends CI_Controller
 				}
  	 
 			}
-
+*/
  
 			if ($is_error == 1) {
 				/*
