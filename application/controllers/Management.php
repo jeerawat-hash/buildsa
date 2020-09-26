@@ -109,7 +109,7 @@ class Management extends CI_Controller
 
  
 			if ($is_error == 1) {
-				
+				/*
 				$resultA = $this->Mobile_model->createDataFromXlsx("CustomerInvoice.xlsx"); 
  
 				foreach ($resultA as $Value) {
@@ -128,7 +128,9 @@ class Management extends CI_Controller
 		 	 
 					}
  
-				}
+				}*/
+
+				print_r($_FILES);
  
 			}
  
