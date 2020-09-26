@@ -32,11 +32,7 @@ class Mobile_model extends CI_Model
 
         $this->mssql = $this->load->database("mssql",true);
 
-        return $this->mssql->query(" 
- select CustomerID,CustomerName,ISNULL( convert(varchar(20) ,sum(a.AMOUNT)) ,'0') as AmountTotal from [Sakorn_Manage].[dbo].[CustomerAmount_LOG] a
- right outer join Theparak3.dbo.Customer b on a.CUST = b.CustomerID
-   where b.CustomerID = '".$CUST."' 
-   group by CustomerID,CustomerName ")->result();
+        return $this->mssql->query(" SELECT Room_No as CustomerID,Person_Id as CustomerName,Total_Invoice as AmountTotal FROM [SarayaProject].[dbo].[CustomerInvoice] where Room_No = '".$CUST."' order by Invoice_Id desc ")->result();
 
 
   }

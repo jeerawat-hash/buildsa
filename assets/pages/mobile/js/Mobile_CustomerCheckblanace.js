@@ -13,7 +13,7 @@ $(function(){
         data.append('CustomerID', CustomerID); 
 
         $.ajax({
-        	url:"https://pack1.sakorncable.com/index.php/mobile_app/getDataBlanace",
+        	url:"https://saraya.sakorncable.com/index.php/mobile_app/getDataBlanace",
         	type:"POST",
         	data:data,
         	contentType : false,
@@ -65,7 +65,7 @@ $(function(){
 		data.append("CustomerID",dataid);
 
 		$.ajax({
-			url : "https://pack1.sakorncable.com/index.php/mobile_app/getDataBlanaceDetail",
+			url : "https://saraya.sakorncable.com/index.php/mobile_app/getDataBlanaceDetail",
 			type : "POST",
 			data : data,
 			contentType : false,
