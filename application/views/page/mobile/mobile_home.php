@@ -454,8 +454,7 @@
                     <table id="table_info_blanace" class="table table-striped table-bordered table-hover">
                                               <thead>
                                                 <tr>
-                                                   
-                                                    <th>รอบบิลวันที่</th>
+                                                    
                                                     <th>รายการ</th>
                                                     <th>ยอด</th>
                                                 

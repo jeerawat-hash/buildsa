@@ -32,20 +32,20 @@ class Mobile_model extends CI_Model
 
         $this->mssql = $this->load->database("mssql",true);
 
-        return $this->mssql->query(" SELECT Room_No as CustomerID,Person_Id as CustomerName,Total_Invoice as AmountTotal FROM [SarayaProject].[dbo].[CustomerInvoice] where Room_No = '".$CUST."' order by Invoice_Id desc ")->result();
+        return $this->mssql->query(" SELECT top 1 Invoice_id as InvoiceID,Room_No as CustomerID,Person_Id as CustomerName,Total_Invoice as AmountTotal FROM [SarayaProject].[dbo].[CustomerInvoice] where Room_No = '".$CUST."' order by Invoice_Id desc ")->result();
 
 
   }
 
-  public function getDataBlanaceDetail($CUST)
+  public function getDataBlanaceDetail($INV)
   {
 
         $this->mssql = $this->load->database("mssql",true);
 
-        return $this->mssql->query("select CustomerID,CustomerName,a.AMOUNT as AmountTotal,c.Description,a.DATE from [Sakorn_Manage].[dbo].[CustomerAmount_LOG] a
- right outer join Theparak3.dbo.Customer b on a.CUST = b.CustomerID  
- join [Sakorn_Manage].[dbo].[CustomerAmount_CodeType] c on a.CODE = c.CODE
- where b.CustomerID = '".$CUST."' order by DATE asc ")->result();
+        return $this->mssql->query("
+select Ac_Name,Invoice_Item_Amount from [SarayaProject].[dbo].CustomerInvoiceDetail where Invoice_Id = '".$INV."'
+union all
+SELECT 'ค้างชำระสะสม' as Ac_Name,Old_Balance as Invoice_Item_Amount FROM [SarayaProject].[dbo].[CustomerInvoice] where Invoice_Id = '".$INV."' ")->result();
 
 
   }
