@@ -46,6 +46,18 @@
 
                 </div> 
 
+                <div id="SendSyncServicesCostDetail" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box hover-zoom-effect">
+                        <div class="icon bg-red">
+                            <i class="material-icons">email</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">ส่งรายละเอียดยอดค้างค่าส่วนกลาง</div>
+                        </div>
+                    </div>
+
+                </div> 
+
                 <div id="SendSyncReceiveCost" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box hover-zoom-effect">
                         <div class="icon bg-blue">
@@ -87,7 +99,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                           
-                                        <label>เลือกไฟล์ รายการยอดค้างชำระSakornPRO เท่านั่น  </label>
+                                        <label>เลือกไฟล์ รายการยอดค้างชำระSakornPRO.xlsx เท่านั่น  </label>
                                         
                                     </div>
                                 </div>
@@ -101,6 +113,73 @@
                                         เลือกไฟล์..
                                         <input type="file" id="ServicesCostfile" name="ServicesCostfile" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
                                         </a><span class='label label-info' id="upload-file-info"></span>
+                                    </div>
+
+
+                                        
+                                    </div>
+                                </div>
+ 
+ 
+                        </div> 
+
+
+
+
+
+
+                        </div>
+                        <div class="modal-footer">
+                            
+                            <button type="button" id="SendData" class="btn btn-lg btn-success waves-effect">ส่งข้อมูล</button>
+                            <div class="preloader" id="PreloadSendData">
+                                    <div class="spinner-layer pl-red">
+                                        <div class="circle-clipper left">
+                                            <div class="circle"></div>
+                                        </div>
+                                        <div class="circle-clipper right">
+                                            <div class="circle"></div>
+                                        </div>
+                                    </div>
+                            </div> 
+                            <button type="button" data-dismiss="modal" class="btn btn-lg btn-danger waves-effect">ปิด</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        <!-- DataSyncServicesCostDetailModal -->
+            <div class="modal fade" data-backdrop="static" data-keyboard="false" id="DataSyncServicesCostDetailModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="largeModalLabel">อัพเดทรายละเอียดยอดค้างชำระ</h4>
+                        </div>
+                        <div class="modal-body">
+
+
+                        <div class="row clearfix">
+                                
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                          
+                                        <label>เลือกไฟล์ รายละเอียดยอดค้างชำระSakornPro.xlsx เท่านั่น  </label>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                          
+
+                                      <div id="fileupload" style="position:relative;">
+                                        <a class='btn btn-primary' href='javascript:;'>
+                                        เลือกไฟล์..
+                                        <input type="file" id="ServicesCostDetailfile" name="ServicesCostDetailfile" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40"  onchange='$("#upload-file-info2").html($(this).val());'>
+                                        </a><span class='label label-info' id="upload-file-info2"></span>
                                     </div>
 
 

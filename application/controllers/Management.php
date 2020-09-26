@@ -73,10 +73,13 @@ class Management extends CI_Controller
  
 
 	}
-/*
+
 	public function createDataServicesCostDetailFromXlsx()
 	{
 
+		error_reporting(0);
+
+		$is_error = 2;
 
 		if ($_FILES["ServicesCostDetail"]["type"] == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
 
@@ -90,24 +93,29 @@ class Management extends CI_Controller
  
 			foreach ($result as $Value) {
 
- 
-				//$this->Mobile_model->insertDataServicesCost($CUST,$Value["DATE"],$Value["CODE"],$Value["AMOUNT"]);
-	 
+				if (isset($Value["Invoice_item_amount"])) {
 
+					$this->Mobile_model->insertDataServicesCostDetail($ValueDetail["invoice_id"],$ValueDetail["Ac_code"],$ValueDetail["Ac_name"],$ValueDetail["Description"],$ValueDetail["Order_no"],$ValueDetail["Invoice_item_amount"]);
+					
+					$is_error = 1;
+				}else{
+					$is_error = 2;
+
+
+				}
+ 	 
 			}
 
- 
-			echo "1";
+			echo $is_error;
 
 		}else{
 
-			echo "2";
-
+			echo $is_error;
 		}
  
 
 	}
-	*/
+	
 	public function createDataReceiveFromXlsx()
 	{
 
