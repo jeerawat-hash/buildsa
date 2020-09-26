@@ -15,13 +15,12 @@ $(function(){
  
 
             ////// ไฟล์ 
-            var Slip_file = $('#ServicesCostfile').prop('files')[0]; 
-            var Slip_file2 = $('#ServicesCostfile2').prop('files')[0]; 
+            var Slip_file = $('#ServicesCostfile').prop('files')[0];  
             ////// ไฟล์
             var data = new FormData();      
             ////// เพิ่มข้อมูลเข้า          
             data.append('ServicesCost', Slip_file); 
-            data.append('ServicesCostDetail', Slip_file2); 
+           // data.append('ServicesCostDetail', Slip_file2); 
             //data.append('Telephone', Telephone );
             ////// เพิ่มข้อมูลเข้า array           
  
