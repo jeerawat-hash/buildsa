@@ -36,7 +36,7 @@ class Management extends CI_Controller
 	{
 
 
-		$is_error = 1;
+		$is_error = 2;
 
 		if ($_FILES["ServicesCost"]["type"] == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
 
