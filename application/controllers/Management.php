@@ -64,7 +64,7 @@ class Management extends CI_Controller
  
 			//echo "1";
 			echo $is_error;
-			shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoice.xlsx"); 
+			//shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoice.xlsx"); 
 		//	print_r($_FILES);
 		}else{
 
@@ -133,7 +133,7 @@ class Management extends CI_Controller
 			}
  
 			shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoiceDetail.xlsx");
- 
+ 			shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoice.xlsx"); 
 			echo $is_error;
 
 		}else{
