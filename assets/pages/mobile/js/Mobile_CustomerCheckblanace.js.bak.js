@@ -13,7 +13,7 @@ $(function(){
         data.append('CustomerID', CustomerID); 
 
         $.ajax({
-        	url:"https://pack1.sakorncable.com/index.php/mobile_app/getDataBlanace",
+        	url:"https://saraya.sakorncable.com/index.php/mobile_app/getDataBlanace",
         	type:"POST",
         	data:data,
         	contentType : false,
@@ -31,7 +31,7 @@ $(function(){
 
         		var html = "<tr><td>"+object[0].CustomerID+"</td><td>"+object[0].AmountTotal+" บาท</td></tr>"+
         						"<tr>"+
-        						"<td colspan='3' > <button class='btn btn-success btn-lg btn-block waves-effect InfoBlanaceBar' data-id='"+object[0].CustomerID+"' >แสดงรายละเอียด</button> </td>"+
+        						"<td colspan='3' > <button class='btn btn-success btn-lg btn-block waves-effect InfoBlanaceBar' data-id='"+object[0].InvoiceID+"' >แสดงรายละเอียด</button> </td>"+
                                 "</tr>";
 
 
@@ -62,10 +62,10 @@ $(function(){
 		//alert(data);
 
 		var data = new FormData();
-		data.append("CustomerID",dataid);
+		data.append("InvoiceID",dataid);
 
 		$.ajax({
-			url : "https://pack1.sakorncable.com/index.php/mobile_app/getDataBlanaceDetail",
+			url : "https://saraya.sakorncable.com/index.php/mobile_app/getDataBlanaceDetail",
 			type : "POST",
 			data : data,
 			contentType : false,
@@ -85,10 +85,9 @@ $(function(){
 
 					for (var i = 0; i < object.length; i++) {
 						
-						html += " <tr> "+
-                                     "<td>"+object[i].DATE+"</td>"+
-                                     "<td>"+object[i].Description+"</td>"+
-                                     "<td>"+object[i].AmountTotal+" บาท</td>"+
+						html += " <tr> "+ 
+                                     "<td>"+object[i].Ac_Name+"</td>"+
+                                     "<td>"+object[i].Invoice_Item_Amount+" บาท</td>"+
                                  "</tr> ";
 
 
