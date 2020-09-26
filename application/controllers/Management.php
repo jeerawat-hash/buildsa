@@ -35,6 +35,9 @@ class Management extends CI_Controller
 	public function createDataServicesCostFromXlsx()
 	{
 
+
+		$is_error = 1;
+
 		if ($_FILES["ServicesCost"]["type"] == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
 
 			shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoice.xlsx"); 
@@ -47,19 +50,23 @@ class Management extends CI_Controller
  
 			foreach ($result as $Value) {
 
+				if (isset($Value["Old_balance"])) {
+					$this->Mobile_model->insertDataServicesCost($Value["Invoice_id"],$Value["Invoice_no"],$Value["Invoice_date"],$Value["Room_no"],$Value["Person_id"],$Value["Invoice_amount"],$Value["Old_balance"],$Value["Total_invoice"],$Value["Receipt_amount"],$Value["Doc_status"]); 
+				}else{
+					$is_error = 2;
+				}
  
-				$this->Mobile_model->insertDataServicesCost($Value["Invoice_id"],$Value["Invoice_no"],$Value["Invoice_date"],$Value["Room_no"],$Value["Person_id"],$Value["Invoice_amount"],$Value["Old_balance"],$Value["Total_invoice"],$Value["Receipt_amount"],$Value["Doc_status"]);
-	 			
-   
+				 
 			}
 
  
-			echo "1";
+			//echo "1";
+			echo $is_error;
 		//	print_r($_FILES);
 		}else{
 
-			echo "2";
-
+			//echo "2";
+			echo $is_error;
 		}
  
 
