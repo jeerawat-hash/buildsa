@@ -130,7 +130,7 @@ class Management extends CI_Controller
 
  			$result = $this->Mobile_model->createDataFromXlsx("CustomerReceipt.xlsx");
 
-			$this->Mobile_model->clearDataReceiveCost();
+			//$this->Mobile_model->clearDataReceiveCost();
 
 			foreach ($result as $Value) {
 
@@ -168,7 +168,7 @@ class Management extends CI_Controller
 
  			$result = $this->Mobile_model->createDataFromXlsx("CustomerReceiptDetail.xlsx");
 
-			$this->Mobile_model->clearDataReceiveCost();
+			//$this->Mobile_model->clearDataReceiveCost();
 
 			foreach ($result as $Value) {
 
