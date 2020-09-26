@@ -172,7 +172,7 @@
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="largeModalLabel">เช็คยอดค่าส่วนกลางบ้านเอื้ออาทรศาลายา</h4>
+                            <h4 class="modal-title" id="largeModalLabel">เช็คยอดค่าส่วนกลางบ้านเอื้ออาทรศาลายา 3</h4>
                         </div>
                         <div class="modal-body">
 
@@ -489,7 +489,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="defaultModalLabel">ยืนยันตัวตนด้วยหมายเลขห้องบ้านเอื้ออาทรศาลายา <font color="red">(เลขที่บ้าน 000/00)</font></h4>
+                            <h4 class="modal-title" id="defaultModalLabel">ยืนยันตัวตนด้วยหมายเลขห้องบ้านเอื้ออาทรศาลายา 3 <font color="red">(เลขที่บ้าน 000/00)</font></h4>
                         </div>
                         <div class="modal-body">
 
