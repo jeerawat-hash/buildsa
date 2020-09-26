@@ -97,7 +97,7 @@ class Management extends CI_Controller
 						 	  
 						 	$this->Mobile_model->insertDataServicesCostDetail($ValueDetail["invoice_id"],$ValueDetail["Ac_code"],$ValueDetail["Ac_name"],$ValueDetail["Description"],$ValueDetail["Order_no"],$ValueDetail["Invoice_item_amount"]); 
  							$is_error = 1;
- 							
+
 						 }else{
 
 						 	$is_error = 2;
@@ -106,9 +106,7 @@ class Management extends CI_Controller
 		 	 
 			}
 
- 
-			shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoiceDetail.xlsx");
- 			shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoice.xlsx"); 
+  
 			echo $is_error;
 
 		}else{
