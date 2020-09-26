@@ -35,6 +35,7 @@ class Management extends CI_Controller
 	public function createDataServicesCostFromXlsx()
 	{
 
+		error_reporting(0);
 
 		$is_error = 2;
 
