@@ -10,6 +10,17 @@ $(function(){
 
     });
 
+    $("#SendSyncServicesCostDetail").on("click",function(){
+
+        $("#DataSyncServicesCostDetailModal").modal("show");
+        $("#DataSyncServicesCostDetailModal").find("#PreloadSendData").hide();
+        $("#DataSyncServicesCostDetailModal").find("#SendData").show();
+        $('#ServicesCostDetailfile').val('');
+
+
+    });
+    
+
 
     $("#DataSyncServicesCostModal").find("#SendData").on("click",function(){
  
@@ -80,6 +91,10 @@ $(function(){
  
 
     });
+
+
+
+
 
 
 
