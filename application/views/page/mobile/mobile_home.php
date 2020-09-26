@@ -558,7 +558,7 @@ function CopyFunction() {
  
 
 <script type="text/javascript">
-    
+    /*
         //new logic check timeout
         var timeOutMin = 60;
         var timeOut = (timeOutMin==null)?60:timeOutMin;
@@ -585,6 +585,6 @@ function CopyFunction() {
                 top.location.href = 'https://saraya.sakorncable.com/';
             }
         }
-        
+        */
 </script>
 
