@@ -64,6 +64,7 @@ class Management extends CI_Controller
  
 			//echo "1";
 			echo $is_error;
+			shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoice.xlsx"); 
 		//	print_r($_FILES);
 		}else{
 
@@ -86,19 +87,19 @@ class Management extends CI_Controller
 			shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoiceDetail.xlsx");
 			
 			move_uploaded_file($_FILES["ServicesCostDetail"]["tmp_name"], "/home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoiceDetail.xlsx");
-  
-			$result = $this->Mobile_model->createDataFromXlsx("CustomerInvoiceDetail.xlsx");
+  			 
+			$resultB = $this->Mobile_model->createDataFromXlsx("CustomerInvoiceDetail.xlsx");
 
 			//print_r($result);
  
-			foreach ($result as $Value) {
+			foreach ($resultB as $ValueDetail) {
 
-				if (isset($Value["Invoice_item_amount"])) {
-
-					$this->Mobile_model->insertDataServicesCostDetail($ValueDetail["invoice_id"],$ValueDetail["Ac_code"],$ValueDetail["Ac_name"],$ValueDetail["Description"],$ValueDetail["Order_no"],$ValueDetail["Invoice_item_amount"]);
-					
+				if (isset($ValueDetail["Invoice_item_amount"])) {
+ 
 					$is_error = 1;
+
 				}else{
+
 					$is_error = 2;
 
 
@@ -106,6 +107,33 @@ class Management extends CI_Controller
  	 
 			}
 
+ 
+			if ($is_error == 1) {
+				
+				$resultA = $this->Mobile_model->createDataFromXlsx("CustomerInvoice.xlsx"); 
+ 
+				foreach ($resultA as $Value) {
+
+					 foreach ($resultB as $ValueDetail) {
+
+						 if ($Value["Invoice_id"] == $ValueDetail["invoice_id"]) {
+						 	  
+						 	$this->Mobile_model->insertDataServicesCostDetail($ValueDetail["invoice_id"],$ValueDetail["Ac_code"],$ValueDetail["Ac_name"],$ValueDetail["Description"],$ValueDetail["Order_no"],$ValueDetail["Invoice_item_amount"]); 
+ 							$is_error = 1;
+						 }else{
+
+						 	$is_error = 2;
+
+						 }
+		 	 
+					}
+ 
+				}
+ 
+			}
+ 
+			shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoiceDetail.xlsx");
+ 
 			echo $is_error;
 
 		}else{
