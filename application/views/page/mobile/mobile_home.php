@@ -505,7 +505,7 @@
                             
                         </div>
                         <div class="modal-footer">
-                            <button type="button" id="GetData" class="btn btn-lg btn-danger waves-effect">เข้าสู่ระบบ</button>
+                            <button type="button" id="GetData" class="btn btn-lg btn-success waves-effect">เข้าสู่ระบบ</button>
 
                             <div class="preloader" id="PreloadGetData">
                                     <div class="spinner-layer pl-red">
