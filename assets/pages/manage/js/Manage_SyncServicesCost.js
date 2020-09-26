@@ -108,10 +108,10 @@ $(function(){
             ////// ไฟล์
             var data = new FormData();      
             ////// เพิ่มข้อมูลเข้า          
-            data.append('ServicesCostDetail', Slip_file); 
+            data.append('ServicesCost', Slip_file); 
            // data.append('ServicesCostDetail', Slip_file2); 
             //data.append('Telephone', Telephone );
-            ////// เพิ่มข้อมูลเข้า array           
+            ////// เพิ่มข้อมูลเข้า array      
  
  
         $("#DataSyncServicesCostDetailModal").find("#SendData").hide();
