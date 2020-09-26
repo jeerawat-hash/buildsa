@@ -19,7 +19,7 @@ $(function(){
 
 
     });
-
+    
 
 
     $("#DataSyncServicesCostModal").find("#SendData").on("click",function(){
@@ -104,14 +104,14 @@ $(function(){
  
 
             ////// ไฟล์ 
-            var Slip_filea = $('#ServicesCostDetailfile').prop('files')[0];  
+            var Slip_file = $('#ServicesCostDetailfile').prop('files')[0];  
             ////// ไฟล์
             var data = new FormData();      
             ////// เพิ่มข้อมูลเข้า          
-            data.append('ServicesCostA', Slip_filea); 
+            data.append('ServicesCostDetail', Slip_file); 
            // data.append('ServicesCostDetail', Slip_file2); 
             //data.append('Telephone', Telephone );
-            ////// เพิ่มข้อมูลเข้า array      
+            ////// เพิ่มข้อมูลเข้า array           
  
  
         $("#DataSyncServicesCostDetailModal").find("#SendData").hide();
