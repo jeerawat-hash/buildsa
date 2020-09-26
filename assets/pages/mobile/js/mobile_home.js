@@ -1,1 +1,124 @@
-var _0x3cf7=['#NameAuthen','#DataAuthenModal','#CustomerID','GUEST','modal','text','val','#CustomerGetPolicyAModal','now','#CustomerGetPolicyB','hide','find','#PreloadGetData','click','#GetData','Authentication\x20Success','show','trim','clear','#CustomerIDAuthen','กรุณากรอกเลขที่บ้านให้ถูกต้อง','contextmenu'];(function(_0x31b937,_0x3cf750){var _0x34f555=function(_0x537b6f){while(--_0x537b6f){_0x31b937['push'](_0x31b937['shift']());}};_0x34f555(++_0x3cf750);}(_0x3cf7,0x16a));var _0x34f5=function(_0x31b937,_0x3cf750){_0x31b937=_0x31b937-0x0;var _0x34f555=_0x3cf7[_0x31b937];return _0x34f555;};$(function(){var _0x58c016=_0x34f5;document['addEventListener'](_0x58c016('0xb'),_0x537b6f=>_0x537b6f['preventDefault']()),setInterval(function(){var _0x46b8ff=_0x58c016,_0x215ef0=performance['now'](),_0x54370d,_0x328355;for(_0x54370d=0x0;_0x54370d<0x3e8;_0x54370d++){console['log'](_0x54370d),console[_0x46b8ff('0x8')]();}_0x328355=performance[_0x46b8ff('0x14')]()-_0x215ef0;if(_0x328355>0xc8){window['location']='https://saraya.sakorncable.com/index.php/mobile_app';debugger;}},0x1f4),$(_0x58c016('0xd'))[_0x58c016('0x10')](_0x58c016('0x6')),$(_0x58c016('0xd'))[_0x58c016('0x1')](_0x58c016('0x2'))[_0x58c016('0x0')](),$('#DataAuthenModal')[_0x58c016('0x1')]('#GetData')['on'](_0x58c016('0x3'),function(){var _0x34b02a=_0x58c016,_0x23a788=$(_0x34b02a('0xe'))[_0x34b02a('0x12')]();if(_0x23a788=='')return alert(_0x34b02a('0xa')),![];if(_0x23a788[_0x34b02a('0x7')]()=='')return alert(_0x34b02a('0xa')),![];$(_0x34b02a('0xd'))[_0x34b02a('0x1')](_0x34b02a('0x4'))[_0x34b02a('0x0')](),$(_0x34b02a('0xd'))[_0x34b02a('0x1')]('#PreloadGetData')[_0x34b02a('0x6')](),setTimeout(function(){var _0x37c73b=_0x34b02a;$(_0x37c73b('0xc'))['text'](_0x37c73b('0xf')),$('#StatusAuthen')[_0x37c73b('0x11')](_0x37c73b('0x5')),$(_0x37c73b('0x9'))[_0x37c73b('0x12')](_0x23a788),$(_0x37c73b('0xd'))[_0x37c73b('0x10')]('hide'),$(_0x37c73b('0xd'))[_0x37c73b('0x1')](_0x37c73b('0x4'))['show']();},0x3e8);}),$('#CustomerGetPolicyA')['on'](_0x58c016('0x3'),function(){var _0x4981b4=_0x58c016;$(_0x4981b4('0x13'))['modal'](_0x4981b4('0x6'));}),$(_0x58c016('0x15'))['on'](_0x58c016('0x3'),function(){var _0x578828=_0x58c016;$('#CustomerGetPolicyBModal')[_0x578828('0x10')](_0x578828('0x6'));});});
+$(function(){
+ 
+	document.addEventListener('contextmenu', event => event.preventDefault());
+
+	setInterval(function(){
+	  var startTime = performance.now(), check, diff;
+	  for (check = 0; check < 1000; check++){
+	    console.log(check);
+	    console.clear();
+	  }
+	  diff = performance.now() - startTime;
+	  if (diff > 200){
+
+	    //alert("Debugger detected!");
+	    //window.location="https://saraya.sakorncable.com/index.php/mobile_app";
+	    debugger;
+
+	  }
+	}, 500);
+ 
+
+
+ 	
+ 		$("#DataAuthenModal").modal("show");
+		$("#DataAuthenModal").find("#PreloadGetData").hide();
+    
+
+
+	$("#DataAuthenModal").find("#GetData").on("click",function(){
+
+
+		var Customer = $("#CustomerID").val();
+
+		if (Customer == "") {
+
+			alert("กรุณากรอกเลขที่บ้านให้ถูกต้อง");
+			return false;
+
+		} 
+		if (Customer.trim() == "") {
+
+			alert("กรุณากรอกเลขที่บ้านให้ถูกต้อง");
+			return false;
+
+		}
+ 
+		$("#DataAuthenModal").find("#GetData").hide();
+		$("#DataAuthenModal").find("#PreloadGetData").show();
+
+		setTimeout(function(){
+
+/*
+			$.post("https://saraya.sakorncable.com/index.php/mobile_app/login",{CustomerID : Customer}
+			,function(data,status){
+
+
+				var object =  JSON.parse(data);
+
+				//console.log(data);
+				console.log(object);
+ 
+				
+				if (object.length == 1) {
+  
+					$("#NameAuthen").text(object[0].CustomerINFO);
+					$("#StatusAuthen").text("Authentication Success");
+					$("#CustomerIDAuthen").val(object[0].CustomerID);
+					$("#DataAuthenModal").modal("hide");
+					$("#DataAuthenModal").find("#GetData").show();
+
+
+				}else{
+					alert("ข้อมูลผิดพลาด..");
+					$("#DataAuthenModal").find("#GetData").show();
+					$("#DataAuthenModal").find("#PreloadGetData").hide();
+
+					return false;
+				}
+				
+				 
+
+
+
+			});
+
+ */
+ 
+ 					$("#NameAuthen").text("GUEST");
+					$("#StatusAuthen").text("Authentication Success");
+					$("#CustomerIDAuthen").val(Customer);
+					$("#DataAuthenModal").modal("hide");
+					$("#DataAuthenModal").find("#GetData").show();
+
+
+
+		}, 1000);
+ 
+
+	});
+
+
+	$("#CustomerGetPolicyA").on("click",function(){
+
+
+		$("#CustomerGetPolicyAModal").modal("show");
+
+
+	});
+
+	$("#CustomerGetPolicyB").on("click",function(){
+
+
+		$("#CustomerGetPolicyBModal").modal("show");
+
+
+	});
+
+
+
+
+
+
+
+});
