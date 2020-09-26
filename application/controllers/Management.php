@@ -87,22 +87,14 @@ class Management extends CI_Controller
 			
 			move_uploaded_file($_FILES["ServicesCostDetail"]["tmp_name"], "/home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoiceDetail.xlsx");
   			 
-			$resultB = $this->Mobile_model->createDataFromXlsx("CustomerInvoiceDetail.xlsx");
+			$result = $this->Mobile_model->createDataFromXlsx("CustomerInvoiceDetail.xlsx");
 
 			//print_r($result);
    			
-   			foreach ($resultB as $ValueDetail) {
-
-						 if ( isset($ValueDetail["Invoice_item_amount"]) ) {
-						 	  
+   			foreach ($result as $ValueDetail) {
+ 
 						 	$this->Mobile_model->insertDataServicesCostDetail($ValueDetail["invoice_id"],$ValueDetail["Ac_code"],$ValueDetail["Ac_name"],$ValueDetail["Description"],$ValueDetail["Order_no"],$ValueDetail["Invoice_item_amount"]); 
- 							$is_error = 1;
-
-						 }else{
-
-						 	$is_error = 2;
-
-						 }
+ 							 
 
 			}
  
