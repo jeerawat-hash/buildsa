@@ -183,6 +183,11 @@ class Management extends CI_Controller
   
 	} 
 
+	public function test()
+	{
+			$result = $this->Mobile_model->createDataFromXlsx("CustomerInvoiceDetail.xlsx");
+			print_r($result);
+	}
  
 
 
