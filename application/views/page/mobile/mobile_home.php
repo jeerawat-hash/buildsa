@@ -116,7 +116,7 @@
                             <i class="material-icons">email</i>
                         </div>
                         <div class="content">
-                            <div class="text">ส่งใบเสร็จยืนยันการชำระค่าส่วนกลาง</div>
+                            <div class="text">ส่งสลิป ยืนยันการชำระค่าส่วนกลาง</div>
                         </div>
                     </div>
 
@@ -129,7 +129,7 @@
                             <i class="material-icons">equalizer</i>
                         </div>
                         <div class="content">
-                            <div class="text">ข้อบังคับ  นิติเคหะชมชนศาลายา</div>
+                            <div class="text">ข้อบังคับ นิติบุคคล เอื้ออาทรศาลายา 3</div>
                         </div>
                     </div>
 
@@ -141,7 +141,7 @@
                             <i class="material-icons">equalizer</i>
                         </div>
                         <div class="content">
-                            <div class="text">ระเบียบ นิติเคหะชมชนศาลายา</div>
+                            <div class="text">ระเบียบ นิติบุคคล เอื้ออาทรศาลายา 3</div>
                         </div>
                     </div>
 

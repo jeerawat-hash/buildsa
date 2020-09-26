@@ -22,7 +22,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>นิติบุคคล ศาลายา</title>
+    <title>นิติบุคคล เอื้ออาทรศาลายา 3</title>
     <!-- Favicon-->
     <link rel="icon" href="https://saraya.sakorncable.com/assets/favicon.ico" type="image/x-icon">
 
@@ -118,7 +118,7 @@
                 -->
                 <a href="javascript:void(0);" class="bars"></a>
                 
-                <a class="navbar-brand" href="javascript:void(0);">นิติบุคคล ศาลายา </a>
+                <a class="navbar-brand" href="javascript:void(0);">นิติบุคคล เอื้ออาทรศาลายา 3 </a>
             </div>
             
             <!--
