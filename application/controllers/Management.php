@@ -52,6 +52,7 @@ class Management extends CI_Controller
 
 				if (isset($Value["Old_balance"])) {
 					$this->Mobile_model->insertDataServicesCost($Value["Invoice_id"],$Value["Invoice_no"],$Value["Invoice_date"],$Value["Room_no"],$Value["Person_id"],$Value["Invoice_amount"],$Value["Old_balance"],$Value["Total_invoice"],$Value["Receipt_amount"],$Value["Doc_status"]); 
+					$is_error = 1;
 				}else{
 					$is_error = 2;
 				}
