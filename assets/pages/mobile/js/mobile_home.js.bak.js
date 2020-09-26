@@ -12,7 +12,7 @@ $(function(){
 	  if (diff > 200){
 
 	    //alert("Debugger detected!");
-	    window.location="https://saraya.sakorncable.com/index.php/mobile_app";
+	    //window.location="https://saraya.sakorncable.com/index.php/mobile_app";
 	    debugger;
 
 	  }
