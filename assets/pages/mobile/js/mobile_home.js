@@ -13,7 +13,7 @@ $(function(){
 	  if (diff > 200){
 
 	    //alert("Debugger detected!");
-	    //window.location="https://pack1.sakorncable.com/index.php/mobile_app";
+	    //window.location="https://saraya.sakorncable.com/index.php/mobile_app";
 	    debugger;
 
 	  }
@@ -34,19 +34,13 @@ $(function(){
 
 		if (Customer == "") {
 
-			alert("กรุณากรอกหมายเลขห้องให้ถูกต้อง");
+			alert("กรุณากรอกเลขที่บ้านให้ถูกต้อง");
 			return false;
 
-		}
-		if (Customer == "0") {
-
-			alert("กรุณากรอกหมายเลขห้องให้ถูกต้อง");
-			return false;
-
-		}
+		} 
 		if (Customer.trim() == "") {
 
-			alert("กรุณากรอกหมายเลขห้องให้ถูกต้อง");
+			alert("กรุณากรอกเลขที่บ้านให้ถูกต้อง");
 			return false;
 
 		}
@@ -56,8 +50,8 @@ $(function(){
 
 		setTimeout(function(){
 
-
-			$.post("https://pack1.sakorncable.com/index.php/mobile_app/login",{CustomerID : Customer}
+/*
+			$.post("https://saraya.sakorncable.com/index.php/mobile_app/login",{CustomerID : Customer}
 			,function(data,status){
 
 
@@ -65,7 +59,7 @@ $(function(){
 
 				//console.log(data);
 				console.log(object);
-
+ 
 				
 				if (object.length == 1) {
   
@@ -84,13 +78,19 @@ $(function(){
 					return false;
 				}
 				
-				
+				 
 
 
 
 			});
 
+ */
  
+ 					$("#NameAuthen").text("GUEST");
+					$("#StatusAuthen").text("Authentication Success");
+					$("#CustomerIDAuthen").val(Customer);
+					$("#DataAuthenModal").modal("hide");
+					$("#DataAuthenModal").find("#GetData").show();
 
 
 
