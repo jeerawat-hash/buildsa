@@ -77,7 +77,7 @@ class Management extends CI_Controller
 
 	public function createDataServicesCostDetailFromXlsx()
 	{
-/*
+
 		error_reporting(0);
 
 		$is_error = 2;
@@ -140,8 +140,8 @@ class Management extends CI_Controller
 
 			echo $is_error;
 		}
- */
-		print_r($_FILES);
+ 
+		//print_r($_FILES);
 
 	}
 	
