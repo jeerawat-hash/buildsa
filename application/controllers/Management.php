@@ -78,7 +78,7 @@ class Management extends CI_Controller
 	public function createDataServicesCostDetailFromXlsx()
 	{
  
-
+		error_reporting(0);
 		$is_error = 2;
 
 		if ($_FILES["ServicesCostDetail"]["type"] == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
@@ -90,42 +90,22 @@ class Management extends CI_Controller
 			$resultB = $this->Mobile_model->createDataFromXlsx("CustomerInvoiceDetail.xlsx");
 
 			//print_r($result);
- 
-			foreach ($resultB as $ValueDetail) {
+   			
+   			foreach ($resultB as $ValueDetail) {
 
-				 print_r($ValueDetail);
- 	 
-			}
- 
- 
-			if ($is_error == 1) {
-				/*
-				$resultA = $this->Mobile_model->createDataFromXlsx("CustomerInvoice.xlsx"); 
- 
-				foreach ($resultA as $Value) {
-
-					 foreach ($resultB as $ValueDetail) {
-
-						 if ($Value["Invoice_id"] == $ValueDetail["invoice_id"]) {
+						 if ( isset($ValueDetail["Invoice_item_amount"]) ) {
 						 	  
 						 	$this->Mobile_model->insertDataServicesCostDetail($ValueDetail["invoice_id"],$ValueDetail["Ac_code"],$ValueDetail["Ac_name"],$ValueDetail["Description"],$ValueDetail["Order_no"],$ValueDetail["Invoice_item_amount"]); 
  							$is_error = 1;
+
 						 }else{
 
 						 	$is_error = 2;
 
 						 }
-		 	 
-					}
- 
-				}*/
 
-				print_r($_FILES);
- 
 			}
  
-			shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoiceDetail.xlsx");
- 			shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoice.xlsx"); 
 			echo $is_error;
 
 		}else{
