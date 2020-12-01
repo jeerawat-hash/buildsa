@@ -227,7 +227,7 @@ class Mobile_app extends CI_Controller
 
 		$Excel = $this->Mobile_model->createDataFromXlsx("deexcel.xlsx");
 
-		print_r($Excel[4]);
+		print_r($Excel[4]->ลำดับที่);
 
 
 
