@@ -99,7 +99,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                           
-                                        <label>เลือกไฟล์ รายการยอดค้างชำระSakornPRO.xlsx เท่านั่น  </label>
+                                        <label>เลือกไฟล์ <font color="red">รายงานบิลค้างชำระ (แบบสรุป).xlsx</font>  เท่านั่น  </label>
                                         
                                     </div>
                                 </div>
