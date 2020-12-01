@@ -32,7 +32,7 @@ $(function(){
         		for (var i = 0; i < object.length; i++) {
 
 
-        			 html += "<tr><td>"+object[i].Invoice_No+"</td><td>"+object[i].Invoice_Date+"</td><td>"+object[i].Descript+"</td><td>"+object[i].Invoice_Amount+" บาท</td></tr>";
+        			 html += "<tr><td><font color='red'>"+object[i].Invoice_No+"</font></td><td>"+object[i].Invoice_Date+"</td><td>"+object[i].Descript+"</td><td><font color='red'>"+object[i].Invoice_Amount+" </font>บาท</td></tr>";
 
 
         		}
