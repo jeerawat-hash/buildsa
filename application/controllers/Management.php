@@ -90,8 +90,8 @@ class Management extends CI_Controller
 	 						////////// sql /////////
 	 						//echo "ค่าปรับรวม ".$SumFine." ค่าทำเนียมรวม ".$Tax." <br>";
 
-	 						$this->Mobile_model->insertDataServicesCostFine($InvoiceNo,"ค่าปรับล่าช้า",$SumFine);
-	 						$this->Mobile_model->insertDataServicesCostFine($InvoiceNo,"ค่าธรรมเนียม",$Tax);
+	 						$this->Mobile_model->insertDataServicesCostFine($InvoiceNo,"ค่าปรับล่าช้า",$SumFine,$Room_no);
+	 						$this->Mobile_model->insertDataServicesCostFine($InvoiceNo,"ค่าธรรมเนียม",$Tax,$Room_no);
 
 							////////// sql /////////
 							$SumFine = 0;

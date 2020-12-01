@@ -71,7 +71,7 @@ SELECT 'ค้างชำระสะสม' as Ac_Name,Old_Balance as Invoice_
  
 
   }
-  public function insertDataServicesCostFine($Invoice_No,$FineDesc,$FineAmount)
+  public function insertDataServicesCostFine($Invoice_No,$FineDesc,$FineAmount,$RoomNo)
   {
 
      $this->mssql = $this->load->database("mssql",true);
@@ -79,11 +79,13 @@ SELECT 'ค้างชำระสะสม' as Ac_Name,Old_Balance as Invoice_
       $this->mssql->query(" INSERT INTO [SarayaProject].[dbo].[CustomerInvoiceFineAmount]
            ([Invoice_no]
            ,[FineDesc]
-           ,[FineAmount])
+           ,[FineAmount]
+           ,[Room_No])
      VALUES
            ('".$Invoice_No."'
            ,'".$FineDesc."'
-           ,'".$FineAmount."') ");
+           ,'".$FineAmount."'
+           ,'".$RoomNo."') ");
  
 
   }
