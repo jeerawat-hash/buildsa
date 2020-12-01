@@ -220,6 +220,18 @@ class Mobile_app extends CI_Controller
 
 
 	}
+	public function testdeexcel()
+	{
+
+
+
+		$Excel = $this->Mobile_model->createDataFromXlsx("deexcel.xlsx");
+
+		print_r($Excel);
+
+
+
+	}
 
 	
 
