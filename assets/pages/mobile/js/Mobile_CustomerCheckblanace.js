@@ -20,23 +20,25 @@ $(function(){
         	cache : false,
         	processData : false,
         	success : function(data){
-
-
+ 
 
         		var object = JSON.parse(data);
         		console.log(object);
-        		/*
-        		$(".CustomerNameLabel").text(object[0].CustomerName);
         		
+        		$(".CustomerNameLabel").text(CustomerID);
+        			
+        		var html = "";
 
-        		var html = "<tr><td>"+object[0].CustomerID+"</td><td>"+object[0].AmountTotal+" บาท</td></tr>"+
-        						"<tr>"+
-        						"<td colspan='3' > <button class='btn btn-success btn-lg btn-block waves-effect InfoBlanaceBar' data-id='"+object[0].InvoiceID+"' >แสดงรายละเอียด</button> </td>"+
-                                "</tr>";
+        		for (var i = 0; i < object.length; i++) {
 
 
+        			 html += "<tr><td>"+object[0].Invoice_No+"</td><td>"+object[0].Invoice_Date+"</td><td>"+object[0].Descript+"</td><td>"+object[0].Invoice_Amount+" บาท</td></tr>";
+
+
+        		}
+ 
                 $("#table_blanace_detail").html(html);
- 				*/
+ 				
 
 
         	},
