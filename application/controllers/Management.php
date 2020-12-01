@@ -81,23 +81,21 @@ class Management extends CI_Controller
 
 						
 					if ($RoomID != $Room_no) {
-
-						$RoomID = $Room_no;
-
+  
 						///// แสดง ค่า บวก ลบ ปรับ
 	 						
 	 					if ($i > 4 ) {
 	 						////////// sql /////////
 	 						//echo "ค่าปรับรวม ".$SumFine." ค่าทำเนียมรวม ".$Tax." <br>";
 
-	 						$this->Mobile_model->insertDataServicesCostFine($InvoiceNo,"ค่าปรับล่าช้า",$SumFine,$Room_no);
-	 						$this->Mobile_model->insertDataServicesCostFine($InvoiceNo,"ค่าธรรมเนียม",$Tax,$Room_no);
+	 						$this->Mobile_model->insertDataServicesCostFine("-","ค่าปรับล่าช้า",$SumFine,$RoomID);
+	 						$this->Mobile_model->insertDataServicesCostFine("-","ค่าธรรมเนียม",$Tax,$RoomID);
 
 							////////// sql /////////
 							$SumFine = 0;
 
 	 					} 
-
+	 					$RoomID = $Room_no;
 						///// 
 
 						if ($InvoiceAmountFinePlus == "200") {
