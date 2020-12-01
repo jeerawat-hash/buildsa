@@ -250,7 +250,7 @@ class Mobile_app extends CI_Controller
 				$InvoiceAmountFinePlus = $Excel[$i][10]["value"];
 
 
-				//if ($Excel[$i][10]["value"] != "รวม") {
+				if ($Excel[$i][10]["value"] == "รวม") {
 
 				echo "ลำดับ ".$Seq." ".$Room_no." 
 				".$CustometName." ".$InvoiceNo." 
@@ -261,7 +261,7 @@ class Mobile_app extends CI_Controller
 				".$InvoiceAmountFinePlus."<br>";
 
 
-				//}
+				}
 
 
 
