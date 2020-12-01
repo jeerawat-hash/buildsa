@@ -227,22 +227,17 @@ class Mobile_app extends CI_Controller
 
 		$Excel = $this->Mobile_model->getDataFromXlsx("deex.xlsx");
 
-		print_r( $Excel );
+		//print_r( $Excel );
 
-		foreach ($Excel as $Exrow) {
+		for ($i=0; $i < count($Excel); $i++) { 
 			
-  			
-			echo $Exrow."<br>";
-
-
-
-//			echo $Exrow["name"]."<br>";
-
-
-
+			if ($i == 4) {
+				print_r($Excel[$i]);
+			}
 
 
 		}
+
 
 
 	}
