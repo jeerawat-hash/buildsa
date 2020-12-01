@@ -255,21 +255,22 @@ class Mobile_app extends CI_Controller
 					
 				if ($RoomID != $Room_no) {
 
-					$RoomID = $Room_no;
-
+					 
 					///// แสดง ค่า บวก ลบ ปรับ
  						
  					if ($i > 4 ) {
  						////////// sql /////////
- 						echo $Excel[$i][1]["value"]."|".$Excel[$i][3]["value"]."|"."ค่าปรับรวม ".$SumFine." ค่าทำเนียมรวม ".$Tax." <br>";
+ 						echo $RoomID."|".$Excel[$i-1][3]["value"]."|"."ค่าปรับรวม ".$SumFine." ค่าทำเนียมรวม ".$Tax." <br>";
 
 
 
 						////////// sql /////////
 						$SumFine = 0;
+						
 
  					} 
 
+ 					$RoomID = $Room_no;
 					///// 
 
 					if ($InvoiceAmountFinePlus == "200") {
