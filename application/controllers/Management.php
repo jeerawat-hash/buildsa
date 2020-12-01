@@ -61,20 +61,20 @@ class Management extends CI_Controller
 			for ($i=0; $i < count($Excel); $i++) { 
 				
 				if ($i >= 4) { 
-					$Seq = $Excel[$i][0]["value"]; ///Seq
-					$Room_no = $Excel[$i][1]["value"]; 
-					$CustometName = $Excel[$i][2]["value"];
-					$InvoiceNo = $Excel[$i][3]["value"];
-					$InvoiceDate = $Excel[$i][4]["value"];
-					$InvoiceAmount = $Excel[$i][5]["value"];
+					$Seq = trim($Excel[$i][0]["value"]); ///Seq
+					$Room_no = trim($Excel[$i][1]["value"]); 
+					$CustometName = trim($Excel[$i][2]["value"]);
+					$InvoiceNo = trim($Excel[$i][3]["value"]);
+					$InvoiceDate = trim($Excel[$i][4]["value"]);
+					$InvoiceAmount = trim($Excel[$i][5]["value"]);
 					//$InvoiceAmountPrePay = $Excel[$i][6]["value"];
-					$InvoiceAmountTotal = $Excel[$i][7]["value"];
+					$InvoiceAmountTotal = trim($Excel[$i][7]["value"]);
 					//$InvoiceAmountTotalPlus = $Excel[$i][8]["value"];
 					///// ปรับ
-					$InvoiceAmountFineRate = $Excel[$i][9]["value"];
+					$InvoiceAmountFineRate = trim($Excel[$i][9]["value"]);
 
 					///// ธรรมเนียม 200
-					$InvoiceAmountFinePlus = $Excel[$i][10]["value"];
+					$InvoiceAmountFinePlus = trim($Excel[$i][10]["value"]);
 
 
 					if ($Excel[$i][8]["value"] == "0") {
