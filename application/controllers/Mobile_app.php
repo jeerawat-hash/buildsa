@@ -275,15 +275,13 @@ class Mobile_app extends CI_Controller
 					".$InvoiceAmountTotal."
 					".$InvoiceAmountFineRate."
 					".$InvoiceAmountFinePlus."
-					"."<font color='red'> เสีย 200 บาท </font><br>";
+					"."<font color='red'> เสีย ".$Tax." บาท </font><br>";
  
 
 				}else{
 
 
-
-
-
+ 
 					echo "ลำดับ ".$Seq." ".$Room_no." 
 					".$CustometName." ".$InvoiceNo." 
 					".$InvoiceDate."
@@ -291,13 +289,7 @@ class Mobile_app extends CI_Controller
 					".$InvoiceAmountTotal."
 					".$InvoiceAmountFineRate." 
 					<br>";
-
-
-
-
-
-
-
+ 
 				}
 
 
