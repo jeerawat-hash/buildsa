@@ -260,9 +260,13 @@ class Mobile_app extends CI_Controller
 					$RoomID = $Room_no;
 
 					///// แสดง ค่า บวก ลบ ปรับ
- 					
-					echo "ค่าปรับรวม ".$SumFine." ค่าทำเนียมรวม ".$Tax." <br>";
-					$SumFine = 0;
+ 						
+ 					if ($i > 4 ) {
+
+ 						echo "ค่าปรับรวม ".$SumFine." ค่าทำเนียมรวม ".$Tax." <br>";
+						$SumFine = 0;
+
+ 					} 
 
 					///// 
 
