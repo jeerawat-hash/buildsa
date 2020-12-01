@@ -227,7 +227,13 @@ class Mobile_app extends CI_Controller
 
 		$Excel = $this->Mobile_model->getDataFromXlsx("deexcel.xlsx");
 
-		print_r( $Excel );
+		//print_r( $Excel );
+
+		foreach ($Excel as $EXval) {
+			
+			echo $EXval->name."<br>";
+
+		}
 
 
 
