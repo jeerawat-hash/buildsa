@@ -223,7 +223,7 @@ class Mobile_app extends CI_Controller
 	public function testdeexcel()
 	{
  
-		$Excel = $this->Mobile_model->getDataFromXlsx("CustomerInvoice.xlsx");
+		$Excel = $this->Mobile_model->getDataFromXlsx("deex.xlsx");
 
 		$RoomID = "";
 		$Tax = 0;
@@ -261,7 +261,7 @@ class Mobile_app extends CI_Controller
  						
  					if ($i > 4 ) {
  						////////// sql /////////
- 						//echo "ค่าปรับรวม ".$SumFine." ค่าทำเนียมรวม ".$Tax." <br>";
+ 						echo "ค่าปรับรวม ".$SumFine." ค่าทำเนียมรวม ".$Tax." <br>";
 
 
 
@@ -280,7 +280,7 @@ class Mobile_app extends CI_Controller
 
 
 					////////// sql /////////
-					/*
+					
 					echo "ลำดับ ".$Seq." ".$Room_no." 
 					".$CustometName." ".$InvoiceNo." 
 					".$InvoiceDate."
@@ -288,7 +288,7 @@ class Mobile_app extends CI_Controller
 					".$InvoiceAmountTotal."
 					".$InvoiceAmountFineRate." 
 					<br>";
-					*/
+					
 					////////// sql /////////
 
  					
@@ -299,7 +299,7 @@ class Mobile_app extends CI_Controller
 
 
  					////////// sql /////////
- 					/*
+ 					
 					echo "ลำดับ ".$Seq." ".$Room_no." 
 					".$CustometName." ".$InvoiceNo." 
 					".$InvoiceDate."
@@ -307,7 +307,7 @@ class Mobile_app extends CI_Controller
 					".$InvoiceAmountTotal."
 					".$InvoiceAmountFineRate." 
 					<br>";
-					*/
+					
 					////////// sql /////////
 
  					$SumFine += $InvoiceAmountFineRate;
