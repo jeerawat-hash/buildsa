@@ -24,7 +24,7 @@ $(function(){
 
 
         		var object = JSON.parse(data);
-        		console.log(object);
+        		console.log(data);
         		/*
         		$(".CustomerNameLabel").text(object[0].CustomerName);
         		
