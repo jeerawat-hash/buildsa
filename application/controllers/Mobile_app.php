@@ -230,6 +230,7 @@ class Mobile_app extends CI_Controller
 		//print_r( $Excel );
 
 		$RoomID = "";
+		$Tax = 0;
 
 		for ($i=0; $i < count($Excel); $i++) { 
 			
@@ -254,19 +255,18 @@ class Mobile_app extends CI_Controller
 
 				if ($Excel[$i][8]["value"] == "0") {
 
-				/*
-				echo "ลำดับ ".$Seq." ".$Room_no." 
-				".$CustometName." ".$InvoiceNo." 
-				".$InvoiceDate."
-				".$InvoiceAmount."
-				".$InvoiceAmountTotal."
-				".$InvoiceAmountFineRate."
-				".$InvoiceAmountFinePlus."<br>";
-				*/
-				 
+
 				if ($RoomID != $Room_no) {
 
 					$RoomID = $Room_no;
+
+
+					if ($InvoiceAmountFinePlus == "200") {
+						$Tax = 200;
+					}else{
+						$Tax = 0;
+					}
+
 
 					echo "ลำดับ ".$Seq." ".$Room_no." 
 					".$CustometName." ".$InvoiceNo." 
@@ -274,11 +274,22 @@ class Mobile_app extends CI_Controller
 					".$InvoiceAmount."
 					".$InvoiceAmountTotal."
 					".$InvoiceAmountFineRate."
-					".$InvoiceAmountFinePlus."<br>";
-			
+					".$InvoiceAmountFinePlus."
+					"."<font color='red'> เสีย 200 บาท </font><br>";
+ 
+
 				}else{
 
+
+
+
+
 					echo "คนเดียวกัน"."<br>";
+
+
+
+
+
 
 
 				}
