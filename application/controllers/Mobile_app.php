@@ -261,7 +261,7 @@ class Mobile_app extends CI_Controller
 
 					///// แสดง ค่า บวก ลบ ปรับ
  					
-					echo "ค่าปรับรวม ".$SumFine;
+					echo "<br>ค่าปรับรวม ".$SumFine;
 
 					///// 
 
