@@ -1,6 +1,6 @@
 $(function(){
  	
- 	/*
+ 	
 	document.addEventListener('contextmenu', event => event.preventDefault());
 
 	setInterval(function(){
@@ -18,7 +18,7 @@ $(function(){
 
 	  }
 	}, 500);
- 	*/
+ 	
 
 
  	
