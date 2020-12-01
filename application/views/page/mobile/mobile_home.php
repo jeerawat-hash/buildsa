@@ -180,7 +180,7 @@
 
                         <div class="row clearfix">
                                 
-                                <div class="col-md-4">
+                                <div class="col-md-2">
                                     <div class="form-group">
                                           
                                         <label class="CustomerNameLabel">ชื่อ</label>
@@ -188,7 +188,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                            
 
