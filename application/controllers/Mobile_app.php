@@ -229,7 +229,7 @@ class Mobile_app extends CI_Controller
 
 		//print_r( $Excel );
 
-		foreach ($Excel as $EXval) {
+		foreach ($Excel[0] as $EXval) {
 			
 			echo $EXval->name."<br>";
 
