@@ -261,9 +261,9 @@ class Mobile_app extends CI_Controller
 
 					///// แสดง ค่า บวก ลบ ปรับ
  					
-					echo "ค่าปรับรวม ".$SumFine."<br>";
+					echo "ค่าปรับรวม ".$SumFine." ค่าทำเนียมรวม ".$Tax." <br>";
 					$SumFine = 0;
-					
+
 					///// 
 
 					if ($InvoiceAmountFinePlus == "200") {
