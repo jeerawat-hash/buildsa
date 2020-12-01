@@ -36,8 +36,8 @@
  
                 <div id="SendSyncServicesCost" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box hover-zoom-effect">
-                        <div class="icon bg-red">
-                            <i class="material-icons">email</i>
+                        <div class="icon bg-light-green">
+                            <i class="material-icons">access_alarm</i>
                         </div>
                         <div class="content">
                             <div class="text">ส่งยอดค้างค่าส่วนกลาง</div>
