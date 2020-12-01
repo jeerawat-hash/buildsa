@@ -231,7 +231,7 @@ class Mobile_app extends CI_Controller
 
 		for ($i=0; $i < count($Excel); $i++) { 
 			
-			if ($i == 4) {
+			if ($i >= 4) {
 				//print_r($Excel[$i]); ///show value in column
 				//print_r($Excel[$i]); ///show var name for use 
 				$Seq = $Excel[$i][0]["value"]; ///Seq
