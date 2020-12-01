@@ -291,7 +291,7 @@ right outer join Sakorn_Manage.dbo.CustomerAmount_CodeType b on a.CODE = b.CODE 
       if ( $xlsx = $this->SimpleXLSX->parse('./upload/temp/'.$file)) {
   
 
-          return $xlsx;
+          return $xlsx->rows(1);
 
 
       }

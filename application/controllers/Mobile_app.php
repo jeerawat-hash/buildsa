@@ -227,7 +227,7 @@ class Mobile_app extends CI_Controller
 
 		$Excel = $this->Mobile_model->getDataFromXlsx("deexcel.xlsx");
 
-		print_r( $Excel->rows(1) );
+		print_r( $Excel );
 
 
 
