@@ -222,15 +222,14 @@ class Mobile_app extends CI_Controller
 	}
 	public function testdeexcel()
 	{
-
-
-
+ 
 		$Excel = $this->Mobile_model->getDataFromXlsx("deex.xlsx");
 
 		//print_r( $Excel );
 
 		$RoomID = "";
 		$Tax = 0;
+		$SumFine = 0;
 
 		for ($i=0; $i < count($Excel); $i++) { 
 			
@@ -255,11 +254,16 @@ class Mobile_app extends CI_Controller
 
 				if ($Excel[$i][8]["value"] == "0") {
 
-
+					
 				if ($RoomID != $Room_no) {
 
 					$RoomID = $Room_no;
 
+					///// แสดง ค่า บวก ลบ ปรับ
+ 					
+					echo "ค่าปรับรวม ".$SumFine;
+
+					///// 
 
 					if ($InvoiceAmountFinePlus == "200") {
 						$Tax = 200;
@@ -276,7 +280,9 @@ class Mobile_app extends CI_Controller
 					".$InvoiceAmountFineRate."
 					".$InvoiceAmountFinePlus."
 					"."<font color='red'> เสีย ".$Tax." บาท </font><br>";
- 
+ 					
+ 					$SumFine += $InvoiceAmountFineRate;
+
 
 				}else{
 
@@ -289,7 +295,9 @@ class Mobile_app extends CI_Controller
 					".$InvoiceAmountTotal."
 					".$InvoiceAmountFineRate." 
 					<br>";
- 
+
+ 					$SumFine += $InvoiceAmountFineRate;
+
 				}
 
 
