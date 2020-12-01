@@ -21,14 +21,27 @@ class Mobile_model extends CI_Model
 
      $this->mssql = $this->load->database("mssql",true);
 
-    return $this->mssql->query("  select * from (
+    return $this->mssql->query("    select * from (
    SELECT Invoice_No,Invoice_Date,'บิลค้าง' as Descript,Invoice_Amount
    FROM [SarayaProject].[dbo].[CustomerInvoice] 
    where Room_No = '".$CUST."' 
    union
    SELECT '' as Invoice_No,'' as Invoice_Date,Finedesc as Descript,FineAmount as Invoice_Amount 
   FROM [SarayaProject].[dbo].[CustomerInvoiceFineAmount] where Room_No = '".$CUST."'
-  )a order by Invoice_No desc  ")->result();
+  union
+  select '' as Invoice_No,'' as Invoice_Date,'ยอดรวม' as Descript,sum(Invoice_Amount) as Invoice_Amount  from (
+   SELECT Invoice_No,Invoice_Date,'บิลค้าง' as Descript,Invoice_Amount
+   FROM [SarayaProject].[dbo].[CustomerInvoice] 
+   where Room_No = '".$CUST."' 
+   union
+   SELECT '' as Invoice_No,'' as Invoice_Date,Finedesc as Descript,FineAmount as Invoice_Amount 
+  FROM [SarayaProject].[dbo].[CustomerInvoiceFineAmount] where Room_No = '".$CUST."'
+
+  )ab
+  )a order by Invoice_No desc,Invoice_Amount asc
+
+
+ ")->result();
 
 
   }
