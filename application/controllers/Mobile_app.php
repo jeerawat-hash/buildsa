@@ -282,9 +282,8 @@ class Mobile_app extends CI_Controller
 					".$InvoiceDate."
 					".$InvoiceAmount."
 					".$InvoiceAmountTotal."
-					".$InvoiceAmountFineRate."
-					".$InvoiceAmountFinePlus."
-					"."<font color='red'> เสีย ".$Tax." บาท </font><br>";
+					".$InvoiceAmountFineRate." 
+					<br>";
  					
  					$SumFine += $InvoiceAmountFineRate;
 
