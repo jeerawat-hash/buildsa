@@ -261,7 +261,7 @@ class Mobile_app extends CI_Controller
  						
  					if ($i > 4 ) {
  						////////// sql /////////
- 						echo "ค่าปรับรวม ".$SumFine." ค่าทำเนียมรวม ".$Tax." <br>";
+ 						echo $Excel[$i][1]["value"]."|".$Excel[$i][3]["value"]."|"."ค่าปรับรวม ".$SumFine." ค่าทำเนียมรวม ".$Tax." <br>";
 
 
 
