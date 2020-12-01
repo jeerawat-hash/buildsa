@@ -223,7 +223,7 @@ class Mobile_app extends CI_Controller
 	public function testdeexcel()
 	{
  
-		$Excel = $this->Mobile_model->getDataFromXlsx("deex.xlsx");
+		$Excel = $this->Mobile_model->getDataFromXlsx("CustomerInvoice.xlsx");
 
 		$RoomID = "";
 		$Tax = 0;
