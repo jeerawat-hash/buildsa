@@ -15,6 +15,25 @@ class Mobile_model extends CI_Model
 
 
   }
+
+  public function getDataBlanace($CUST)
+  {
+
+     $this->mssql = $this->load->database("mssql",true);
+
+     $this->mssql->query("  select * from (
+   SELECT Invoice_No,Invoice_Date,'บิลค้าง' as Descript,Invoice_Amount
+   FROM [SarayaProject].[dbo].[CustomerInvoice] 
+   where Room_No = '".$CUST."' 
+   union
+   SELECT '' as Invoice_No,'' as Invoice_Date,Finedesc as Descript,FineAmount as Invoice_Amount 
+  FROM [SarayaProject].[dbo].[CustomerInvoiceFineAmount] where Room_No = '".$CUST."'
+  )a order by Invoice_No desc  ")->result();
+
+
+  }
+
+  /*
   public function getDataBlanace($CUST)
   {
 
@@ -24,6 +43,7 @@ class Mobile_model extends CI_Model
 
 
   }
+  */
 
   public function getDataBlanaceDetail($INV)
   {

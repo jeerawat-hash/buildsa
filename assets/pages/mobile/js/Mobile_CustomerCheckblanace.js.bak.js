@@ -27,7 +27,7 @@ $(function(){
         		console.log(object);
 
         		$(".CustomerNameLabel").text(object[0].CustomerName);
-
+        		
 
         		var html = "<tr><td>"+object[0].CustomerID+"</td><td>"+object[0].AmountTotal+" บาท</td></tr>"+
         						"<tr>"+
