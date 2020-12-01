@@ -21,7 +21,7 @@ class Mobile_model extends CI_Model
 
      $this->mssql = $this->load->database("mssql",true);
 
-     $this->mssql->query("  select * from (
+    return $this->mssql->query("  select * from (
    SELECT Invoice_No,Invoice_Date,'บิลค้าง' as Descript,Invoice_Amount
    FROM [SarayaProject].[dbo].[CustomerInvoice] 
    where Room_No = '".$CUST."' 
