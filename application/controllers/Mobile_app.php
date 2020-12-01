@@ -232,7 +232,31 @@ class Mobile_app extends CI_Controller
 		for ($i=0; $i < count($Excel); $i++) { 
 			
 			if ($i == 4) {
-				print_r($Excel[$i]);
+				//print_r($Excel[$i]); ///show value in column
+				//print_r($Excel[$i]); ///show var name for use 
+				$Seq = $Excel[$i][0]["value"]; ///Seq
+				$Room_no = $Excel[$i][1]["value"]; 
+				$CustometName = $Excel[$i][2]["value"];
+				$InvoiceNo = $Excel[$i][3]["value"];
+				$InvoiceDate = $Excel[$i][4]["value"];
+				$InvoiceAmount = $Excel[$i][5]["value"];
+				//$InvoiceAmountPrePay = $Excel[$i][6]["value"];
+				$InvoiceAmountTotal = $Excel[$i][7]["value"];
+				//$InvoiceAmountTotalPlus = $Excel[$i][8]["value"];
+				///// ปรับ
+				$InvoiceAmountFineRate = $Excel[$i][9]["value"];
+
+				///// ธรรมเนียม 200
+				$InvoiceAmountFinePlus = $Excel[$i][10]["value"];
+
+				echo "ลำดับ ".$Seq." ".$Room_no." 
+				".$CustometName." ".$InvoiceNo." 
+				".$InvoiceDate."
+				".$InvoiceAmount."
+				".$InvoiceAmountTotal."
+				".$InvoiceAmountFineRate."
+				".$InvoiceAmountFinePlus."<br>";
+
 			}
 
 
