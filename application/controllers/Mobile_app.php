@@ -284,7 +284,13 @@ class Mobile_app extends CI_Controller
 
 
 
-					echo "คนเดียวกัน"."<br>";
+					echo "ลำดับ ".$Seq." ".$Room_no." 
+					".$CustometName." ".$InvoiceNo." 
+					".$InvoiceDate."
+					".$InvoiceAmount."
+					".$InvoiceAmountTotal."
+					".$InvoiceAmountFineRate." 
+					<br>";
 
 
 
