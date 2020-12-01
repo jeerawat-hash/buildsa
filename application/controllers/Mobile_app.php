@@ -207,14 +207,19 @@ class Mobile_app extends CI_Controller
 		}
 
  
-			
+	}
+	public function testnewexcel()
+	{
 
-	    
-  
+
+
+		$Excel = $this->Mobile_model->createDataFromXlsx("testnew.xlsx");
+
+		print_r($Excel);
+
 
 
 	}
-
 
 	
 
