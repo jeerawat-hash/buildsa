@@ -56,7 +56,9 @@ $(function(){
                 
                     if (data == 1) {
 
-                    alert("บันทึกข้อมูลสำเร็จ....");
+                    //alert("บันทึกข้อมูลสำเร็จ....");
+
+                    swal("สำเร็จ!", "บันทึกข้อมูลสำเร็จ!", "success");
 
                     $("#DataSyncServicesCostModal").modal("hide");
 

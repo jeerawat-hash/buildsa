@@ -68,6 +68,9 @@
     <script src="https://saraya.sakorncable.com/assets/clappr/dist/clappr.js"></script>
 
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+
 
 </head>
 
