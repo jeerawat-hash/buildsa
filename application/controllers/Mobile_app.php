@@ -225,8 +225,6 @@ class Mobile_app extends CI_Controller
  
 		$Excel = $this->Mobile_model->getDataFromXlsx("deex.xlsx");
 
-		//print_r( $Excel );
-
 		$RoomID = "";
 		$Tax = 0;
 		$SumFine = 0;
@@ -262,8 +260,12 @@ class Mobile_app extends CI_Controller
 					///// แสดง ค่า บวก ลบ ปรับ
  						
  					if ($i > 4 ) {
+ 						////////// sql /////////
+ 						//echo "ค่าปรับรวม ".$SumFine." ค่าทำเนียมรวม ".$Tax." <br>";
 
- 						echo "ค่าปรับรวม ".$SumFine." ค่าทำเนียมรวม ".$Tax." <br>";
+
+
+						////////// sql /////////
 						$SumFine = 0;
 
  					} 
@@ -277,6 +279,8 @@ class Mobile_app extends CI_Controller
 					}
 
 
+					////////// sql /////////
+					/*
 					echo "ลำดับ ".$Seq." ".$Room_no." 
 					".$CustometName." ".$InvoiceNo." 
 					".$InvoiceDate."
@@ -284,6 +288,9 @@ class Mobile_app extends CI_Controller
 					".$InvoiceAmountTotal."
 					".$InvoiceAmountFineRate." 
 					<br>";
+					*/
+					////////// sql /////////
+
  					
  					$SumFine += $InvoiceAmountFineRate;
 
@@ -291,7 +298,8 @@ class Mobile_app extends CI_Controller
 				}else{
 
 
- 
+ 					////////// sql /////////
+ 					/*
 					echo "ลำดับ ".$Seq." ".$Room_no." 
 					".$CustometName." ".$InvoiceNo." 
 					".$InvoiceDate."
@@ -299,28 +307,14 @@ class Mobile_app extends CI_Controller
 					".$InvoiceAmountTotal."
 					".$InvoiceAmountFineRate." 
 					<br>";
+					*/
+					////////// sql /////////
 
  					$SumFine += $InvoiceAmountFineRate;
 
 				}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 				}
 
 
@@ -334,7 +328,7 @@ class Mobile_app extends CI_Controller
 
 
 		}
-
+		////// for 
 
 
 	}

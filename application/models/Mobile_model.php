@@ -3,19 +3,7 @@
 class Mobile_model extends CI_Model
 {	
 
-
-  public function getDataCustomerByCar($CarCode)
-  {
-
-     $this->mssql = $this->load->database("mssql",true);
-
-      return $this->mssql->query("SELECT b.CustomerName,'ตึก '+SUBSTRING(b.Room,2,2) + ' ' +'ห้อง '+SUBSTRING(b.Room,5,2) as AddressLocal,a.CARCODE,a.CARBRAND,a.CARCOLOR,a.CARTYPE,a.COUNTRY,a.CONTACT 
-  FROM [Sakorn_Manage].[dbo].[CustomerCarInfo] a 
-  join Theparak3.dbo.Customer b on a.CUST = b.CustomerID
-  where a.CARCODE like '".$CarCode."%' ")->result();
-
-
-  }
+ 
 
   public function CustomerAuth($CustomerID)
   {
@@ -62,61 +50,45 @@ SELECT 'ค้างชำระสะสม' as Ac_Name,Old_Balance as Invoice_
 
   }
 
-  public function SyncDataCustomerName($CUST,$TitleName,$CustomerName)
+
+
+  public function insertDataServicesCost($Invoice_No,$Invoice_Date,$Room_No,$Invoice_Amount)
   {
 
      $this->mssql = $this->load->database("mssql",true);
 
-     $checkCustomer = $this->mssql->query(" SELECT CustomerID,TitleName,CustomerName FROM [Theparak3].[dbo].[Customer] where CustomerID = '".$CUST."'  ")->num_rows();
 
-     if ($checkCustomer != 0) {
-       
-
-        $this->mssql->query(" update [Theparak3].[dbo].[Customer] set TitleName = '".$TitleName."',CustomerName = '".$CustomerName."' where CustomerID = '".$CUST."'  ");
-
-
-     }
-
-
-
-  }
-
-
-  public function insertDataCarInfo($CUST,$CARCODE,$COUNTRY,$CARTYPE,$CARBRAND,$CARCOLOR,$CONTACT)
-  {
-
-     $this->mssql = $this->load->database("mssql",true);
-
-     $this->mssql->query(" INSERT INTO [Sakorn_Manage].[dbo].[CustomerCarInfo]
-           ([CUST]
-           ,[CARCODE]
-           ,[COUNTRY]
-           ,[CARTYPE]
-           ,[CARBRAND]
-           ,[CARCOLOR]
-           ,[CONTACT])
+      $this->mssql->query(" INSERT INTO [SarayaProject].[dbo].[CustomerInvoice]
+           ([Invoice_No]
+           ,[Invoice_Date]
+           ,[Room_No]
+           ,[Invoice_Amount])
      VALUES
-           ('".$CUST."'
-           ,'".$CARCODE."'
-           ,'".$COUNTRY."'
-           ,'".$CARTYPE."'
-           ,'".$CARBRAND."'
-           ,'".$CARCOLOR."'
-           ,'".$CONTACT."') ");
-
+           ('".$Invoice_No."'
+           ,'".$Invoice_Date."'
+           ,'".$Room_No."'
+           ,'".$Invoice_Amount."') ");
+ 
 
   }
-
-  public function clearDataCarInfo()
+  public function insertDataServicesCostFine($Invoice_No,$FineDesc,$FineAmount)
   {
 
      $this->mssql = $this->load->database("mssql",true);
 
-     $this->mssql->query(" delete from [Sakorn_Manage].[dbo].[CustomerCarInfo] ");
+      $this->mssql->query(" INSERT INTO [SarayaProject].[dbo].[CustomerInvoiceFineAmount]
+           ([Invoice_no]
+           ,[FineDesc]
+           ,[FineAmount])
+     VALUES
+           ('".$Invoice_No."'
+           ,'".$FineDesc."'
+           ,'".$FineAmount."') ");
  
+
   }
 
- 
+ /*
   public function insertDataServicesCost($Invoice_Id,$Invoice_No,$Invoice_Date,$Room_No,$Person_Id,$Invoice_Amount,$Old_Balance,$Total_Invoice,$Receipt_Amount,$Doc_Status)
   {
 
@@ -147,7 +119,7 @@ SELECT 'ค้างชำระสะสม' as Ac_Name,Old_Balance as Invoice_
 
 
   }
-
+*/
 
   public function insertDataServicesCostDetail($Invoice_Id,$Ac_Code,$Ac_Name,$Description,$Order_No,$Invoice_Item_Amount)
   {
@@ -176,83 +148,13 @@ SELECT 'ค้างชำระสะสม' as Ac_Name,Old_Balance as Invoice_
 
      $this->mssql = $this->load->database("mssql",true);
 
-     $this->mssql->query(" delete from [Sakorn_Manage].[dbo].[CustomerAmount_LOG] ");
+     $this->mssql->query("  delete from [SarayaProject].[dbo].[CustomerInvoice] ");
+     $this->mssql->query("  delete from [SarayaProject].[dbo].[CustomerInvoiceFineAmount] ");
+  
+
+  }
  
-  }
-
-    public function insertDataReceiveCost($CUST,$RECEIPT,$CODE,$AMOUNT)
-  {
-
-     $this->mssql = $this->load->database("mssql",true);
-
-     $this->mssql->query(" INSERT INTO [Sakorn_Manage].[dbo].[CustomerPay_LOG]
-           ([CUST]
-           ,[RECEIPT]
-           ,[PAYTYPE_ID]
-           ,[DATE]
-           ,[CODE]
-           ,[AMOUNT])
-     VALUES
-           ('".$CUST."'
-           ,'".$RECEIPT."'
-           ,'2'
-           ,'".date("Y-m-d")."'
-           ,'".$CODE."'
-           ,'".$AMOUNT."') ");
-
-
-  }
-
-  public function clearDataReceiveCost()
-  {
-
-     $this->mssql = $this->load->database("mssql",true);
-
-     $this->mssql->query(" delete from [Sakorn_Manage].[dbo].[CustomerPay_LOG] ");
- 
-  }
-
-  public function ReportCustomerTotal()
-  {
-
-     $this->mssql = $this->load->database("mssql",true);
-
-     return $this->mssql->query(" select sum(list) as AMOUNT from (
-    select isnull(sum(a.AMOUNT),0) as List,b.Description from Sakorn_Manage.dbo.CustomerAmount_LOG a
-    right outer join Sakorn_Manage.dbo.CustomerAmount_CodeType b on a.CODE = b.CODE group by b.Description
-    )a ")->result();
- 
-  }
-  public function ReportCustomerTotalDetail()
-  {
-
-     $this->mssql = $this->load->database("mssql",true);
-
-     return $this->mssql->query(" select isnull(sum(a.AMOUNT),0) as List,b.Description from Sakorn_Manage.dbo.CustomerAmount_LOG a
-right outer join Sakorn_Manage.dbo.CustomerAmount_CodeType b on a.CODE = b.CODE group by b.Description ")->result();
- 
-  }
-  public function ReportCustomerReceive()
-  {
-
-     $this->mssql = $this->load->database("mssql",true);
-
-     return $this->mssql->query(" select isnull(sum(a.AMOUNT),0) as List,b.Description from Sakorn_Manage.dbo.CustomerPay_LOG a
-right outer join Sakorn_Manage.dbo.CustomerAmount_CodeType b on a.CODE = b.CODE group by b.Description ")->result();
- 
-  }
-
-  public function ReportCustomerReceiveDetail()
-  {
-
-     $this->mssql = $this->load->database("mssql",true);
-
-     return $this->mssql->query("  select Description,Count(RECEIPT) as Receipt,Sum(RECEIPTList) as List,sum(Amount) as Amount from (
- select RECEIPT,b.Description,count(RECEIPT) as RECEIPTList,sum(a.Amount) as Amount from Sakorn_Manage.dbo.CustomerPay_LOG a 
- join Sakorn_Manage.dbo.CustomerPay_Type b on a.PAYTYPE_ID = b.ID group by RECEIPT,b.Description
- )a group by Description ")->result();
- 
-  }
+  
 
 
   public function createDataFromXlsx($file)

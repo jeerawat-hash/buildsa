@@ -32,7 +32,131 @@ class Management extends CI_Controller
  		echo $this->Mobile_model->Authentication($_POST["SecrectKEY"]);
 			
 	}
+	
 	public function createDataServicesCostFromXlsx()
+	{
+
+		error_reporting(0);
+
+		$is_error = 2;
+
+		if ($_FILES["ServicesCost"]["type"] == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
+
+
+			shell_exec("rm /home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoice.xlsx"); 
+
+			move_uploaded_file($_FILES["ServicesCost"]["tmp_name"], "/home/admin/web/saraya.sakorncable.com/public_html/upload/temp/CustomerInvoice.xlsx");
+
+
+	 		$this->Mobile_model->clearDataServicesCost();
+ 		
+
+			$Excel = $this->Mobile_model->getDataFromXlsx("CustomerInvoice.xlsx");
+
+			$RoomID = "";
+			$Tax = 0;
+			$SumFine = 0;
+
+			//// begin 
+			for ($i=0; $i < count($Excel); $i++) { 
+				
+				if ($i >= 4) { 
+					$Seq = $Excel[$i][0]["value"]; ///Seq
+					$Room_no = $Excel[$i][1]["value"]; 
+					$CustometName = $Excel[$i][2]["value"];
+					$InvoiceNo = $Excel[$i][3]["value"];
+					$InvoiceDate = $Excel[$i][4]["value"];
+					$InvoiceAmount = $Excel[$i][5]["value"];
+					//$InvoiceAmountPrePay = $Excel[$i][6]["value"];
+					$InvoiceAmountTotal = $Excel[$i][7]["value"];
+					//$InvoiceAmountTotalPlus = $Excel[$i][8]["value"];
+					///// ปรับ
+					$InvoiceAmountFineRate = $Excel[$i][9]["value"];
+
+					///// ธรรมเนียม 200
+					$InvoiceAmountFinePlus = $Excel[$i][10]["value"];
+
+
+					if ($Excel[$i][8]["value"] == "0") {
+
+						
+					if ($RoomID != $Room_no) {
+
+						$RoomID = $Room_no;
+
+						///// แสดง ค่า บวก ลบ ปรับ
+	 						
+	 					if ($i > 4 ) {
+	 						////////// sql /////////
+	 						//echo "ค่าปรับรวม ".$SumFine." ค่าทำเนียมรวม ".$Tax." <br>";
+
+	 						$this->Mobile_model->insertDataServicesCostFine($InvoiceNo,"ค่าปรับล่าช้า",$SumFine);
+	 						$this->Mobile_model->insertDataServicesCostFine($InvoiceNo,"ค่าธรรมเนียม",$Tax);
+
+							////////// sql /////////
+							$SumFine = 0;
+
+	 					} 
+
+						///// 
+
+						if ($InvoiceAmountFinePlus == "200") {
+							$Tax = 200;
+						}else{
+							$Tax = 0;
+						}
+
+
+						////////// sql /////////
+						$this->Mobile_model->insertDataServicesCost($InvoiceNo,$InvoiceDate,$Room_no,$InvoiceAmountTotal);
+						////////// sql /////////
+
+	 					
+	 					$SumFine += $InvoiceAmountFineRate;
+
+
+					}else{
+
+
+	 					////////// sql /////////
+	 					$this->Mobile_model->insertDataServicesCost($InvoiceNo,$InvoiceDate,$Room_no,$InvoiceAmountTotal);
+						////////// sql /////////
+
+	 					$SumFine += $InvoiceAmountFineRate;
+
+					}
+
+	 
+					}
+
+
+
+
+
+
+
+
+				}
+
+
+			}
+			////// end 
+ 
+
+			echo "1";
+
+		}else{
+
+			//echo "2";
+			echo $is_error;
+		}
+
+
+
+	}
+
+
+	/*public function createDataServicesCostFromXlsx()
 	{
 
 		error_reporting(0);
@@ -73,8 +197,9 @@ class Management extends CI_Controller
 		}
  
 
-	}
+	}*/
 
+	/*
 	public function createDataServicesCostDetailFromXlsx()
 	{
  
@@ -117,7 +242,9 @@ class Management extends CI_Controller
 		//print_r($_FILES);
 
 	}
-	
+	*/
+
+	/*
 	public function createDataReceiveFromXlsx()
 	{
 
@@ -191,7 +318,7 @@ class Management extends CI_Controller
 		}
   
 	} 
-
+	*/
  
 
 
