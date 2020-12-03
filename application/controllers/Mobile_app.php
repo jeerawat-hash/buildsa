@@ -63,8 +63,7 @@ class Mobile_app extends CI_Controller
 	}
 	public function getDataBlanace()
 	{
-
-		error_reporting(0);
+ 
 		//print_r($_POST);
 		echo json_encode( $this->Mobile_model->getDataBlanace($_POST["CustomerID"]) );
 
@@ -397,6 +396,7 @@ class Mobile_app extends CI_Controller
 
 	  function notify($message,$token){
 
+	  	error_reporting(0);
            $lineapi = $token; 
           $mms =  trim($message); 
        //   date_default_timezone_set("Asia/Bangkok");
