@@ -57,7 +57,7 @@ class Mobile_app extends CI_Controller
 			*/
         // ทดสอบ ไลน์ส่วนตัว
 
-		notify("ศาลายา\n".$_POST["CustomerID"]."\nเข้าใช้งานระบบ","HOjJFkhy2vFmmgtUO79umXo0kULZtK1xDtxev92DC1v");
+		notify("ศาลายา\n".$_POST["CustomerID"]."\nเข้าใช้งานระบบ","XkYMd0eSexuCLqVwfcIqsaGfhLfwVld5F09udvSIpd4");
 
 
 	}

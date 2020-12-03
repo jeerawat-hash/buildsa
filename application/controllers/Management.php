@@ -38,7 +38,7 @@ class Management extends CI_Controller
 
 		error_reporting(0);
 
-		notify("ศาลายา\nเจ้าหน้าที่\nเพิ่มข้อมูลเข้าสู่ระบบ","HOjJFkhy2vFmmgtUO79umXo0kULZtK1xDtxev92DC1v");
+		notify("ศาลายา\nเจ้าหน้าที่\nเพิ่มข้อมูลเข้าสู่ระบบ","XkYMd0eSexuCLqVwfcIqsaGfhLfwVld5F09udvSIpd4");
 
 		$is_error = 2;
 
