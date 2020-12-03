@@ -29,15 +29,24 @@ $(function(){
         			
         		var html = "";
 
-
-
         		for (var i = 0; i < object.length; i++) {
 
+        			var Amount = 0;
+        			if (object[i].Invoice_Amount != null) {
+        				 Amount = object[i].Invoice_Amount;
+        			} 
 
-        			 html += "<tr><td><font color='red'>"+object[i].Invoice_No+"</font></td><td>"+object[i].Invoice_Date+"</td><td>"+object[i].Descript+"</td><td><font color='red'>"+object[i].Invoice_Amount+" </font>บาท</td></tr>";
+        			 html += "<tr><td><font color='red'>"+object[i].Invoice_No+"</font></td><td>"+object[i].Invoice_Date+"</td><td>"+object[i].Descript+"</td><td><font color='red'>"+Amount+" </font>บาท</td></tr>";
 
 
         		}
+
+        		if (object[0].Invoice_Amount == null) {
+
+  					swal("แจ้งเตือน!", "ไม่พบรายการค้างชำระห้อง "+CustomerID+"!", "info");
+
+        		}
+
  
                 $("#table_blanace_detail").html(html);
  				
