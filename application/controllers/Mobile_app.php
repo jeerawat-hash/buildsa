@@ -64,11 +64,11 @@ class Mobile_app extends CI_Controller
 	public function getDataBlanace()
 	{
 
-		//print_r($_POST);
+		print_r($_POST);
 		echo json_encode( $this->Mobile_model->getDataBlanace($_POST["CustomerID"]) );
 
 		notify("ศาลายา\n".$_POST["CustomerID"]."\nเข้าใช้งานระบบ","XkYMd0eSexuCLqVwfcIqsaGfhLfwVld5F09udvSIpd4");
-		
+
 
 	}
 	public function getDataBlanaceDetail()
