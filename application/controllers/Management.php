@@ -36,7 +36,7 @@ class Management extends CI_Controller
 	public function createDataServicesCostFromXlsx()
 	{
 
-		error_reporting(0);
+		
 
 		notify("ศาลายา\nเจ้าหน้าที่\nเพิ่มข้อมูลเข้าสู่ระบบ","XkYMd0eSexuCLqVwfcIqsaGfhLfwVld5F09udvSIpd4");
 
@@ -337,7 +337,7 @@ class Management extends CI_Controller
 
 
 function notify($message,$token){
-
+				error_reporting(0);
 			    $lineapi = $token; 
 				$mms =  trim($message); 
 				date_default_timezone_set("Asia/Bangkok");
