@@ -21,15 +21,15 @@ $(function(){
         	processData : false,
         	success : function(data){
  
-        		console.log(object); 
+        		//console.log(object); 
         		var object = JSON.parse(data);
-        		//console.log(object);
+        		console.log(object);
         		
         		$(".CustomerNameLabel").text(CustomerID);
         			
         		var html = "";
 
-        		
+
 
         		for (var i = 0; i < object.length; i++) {
 
