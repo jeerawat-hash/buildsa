@@ -8,6 +8,26 @@ $(function(){
 		var CustomerID = $("#CustomerIDAuthen").val();
 
 
+
+		swal({
+          icon: 'info',
+          title: 'แจ้งเตือน',
+          text: 'กำลังเรียกดูข้อมูล....',
+          timer: 1400,
+          showCancelButton: false,
+          showConfirmButton: false,
+          allowOutsideClick: false,
+        }).then(
+          function () {},
+          // handling the promise rejection
+          function (dismiss) {
+            if (dismiss === 'timer') {
+              //console.log('I was closed by the timer')
+            }
+          }
+        );
+
+
             
         var data = new FormData();          
         data.append('CustomerID', CustomerID); 
