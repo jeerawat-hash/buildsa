@@ -10,22 +10,21 @@ $(function(){
 
 
 		swal({
-          icon: 'info',
-          title: 'แจ้งเตือน',
-          text: 'กำลังเรียกดูข้อมูล....',
-          timer: 1400,
+		  title: 'Auto close alert!',
+		  text: 'I will close in 2 seconds.',
+		  timer: 2000,
 		  showCancelButton: false,
-		  showConfirmButton: false,
-          allowOutsideClick: false
-        }).then(
-          function () {},
-          // handling the promise rejection
-          function (dismiss) {
-            if (dismiss === 'timer') {
-              //console.log('I was closed by the timer')
-            }
-          }
-        );
+		  showConfirmButton: false
+		}).then(
+		  function () {},
+		  // handling the promise rejection
+		  function (dismiss) {
+		    if (dismiss === 'timer') {
+		      //console.log('I was closed by the timer')
+		    }
+		  }
+		)
+
 
 
             

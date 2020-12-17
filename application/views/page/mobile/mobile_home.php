@@ -525,9 +525,9 @@
 
 
         
-        <script src="https://saraya.sakorncable.com/assets/pages/mobile/js/mobile_home.js?v=7"></script>
-        <script src="https://saraya.sakorncable.com/assets/pages/mobile/js/Mobile_CustomerCheckblanace.js?v=7"></script>
-        <script src="https://saraya.sakorncable.com/assets/pages/mobile/js/Mobile_CustomerSendSlip.js?v=7"></script>
+        <script src="https://saraya.sakorncable.com/assets/pages/mobile/js/mobile_home.js?v=8"></script>
+        <script src="https://saraya.sakorncable.com/assets/pages/mobile/js/Mobile_CustomerCheckblanace.js?v=8"></script>
+        <script src="https://saraya.sakorncable.com/assets/pages/mobile/js/Mobile_CustomerSendSlip.js?v=8"></script>
  
 
 <script>
