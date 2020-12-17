@@ -13,7 +13,7 @@ $(function(){
           icon: 'info',
           title: 'แจ้งเตือน',
           text: 'กำลังเรียกดูข้อมูล....',
-          timer: 1400,
+          timer: 2000,
 		  showCancelButton: false,
 		  showConfirmButton: false,
           allowOutsideClick: false,
