@@ -14,9 +14,9 @@ $(function(){
           title: 'แจ้งเตือน',
           text: 'กำลังเรียกดูข้อมูล....',
           timer: 1400,
-          showCancelButton: false,
-          showConfirmButton: false,
-          allowOutsideClick: false,
+		  showCancelButton: false,
+		  showConfirmButton: false,
+          allowOutsideClick: false
         }).then(
           function () {},
           // handling the promise rejection
