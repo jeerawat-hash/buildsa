@@ -8,7 +8,7 @@ $(function(){
 		var CustomerID = $("#CustomerIDAuthen").val();
 
 
-
+		/*
 		swal({
           icon: 'info',
           title: 'แจ้งเตือน',
@@ -27,7 +27,7 @@ $(function(){
             }
           }
         );
-
+		*/
 
             
         var data = new FormData();          

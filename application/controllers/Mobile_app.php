@@ -67,7 +67,7 @@ class Mobile_app extends CI_Controller
 		//print_r($_POST);
 		echo json_encode( $this->Mobile_model->getDataBlanace($_POST["CustomerID"]) );
 
-		notify("ศาลายา\n".$_POST["CustomerID"]."\nเข้าใช้งานระบบ","XkYMd0eSexuCLqVwfcIqsaGfhLfwVld5F09udvSIpd4");
+		//notify("ศาลายา\n".$_POST["CustomerID"]."\nเข้าใช้งานระบบ","XkYMd0eSexuCLqVwfcIqsaGfhLfwVld5F09udvSIpd4");
 
 
 	}
